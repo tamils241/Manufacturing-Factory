@@ -1,0 +1,15 @@
+:root {
+  --primary: #0b3d91;
+  --secondary: #f39c12;
+  --dark: #111827;
+  --light: #f8fafc;
+  --success: #22c55e;
+  --ink: #273244;
+  --muted: #64748b;
+  --line: rgba(15, 23, 42, 0.12);
+  --glass: rgba(255, 255, 255, 0.72);
+  --shadow: 0 18px 60px rgba(15, 23, 42, 0.14);
+  --radius: 8px;
+  --heading: "Poppins", sans-serif;
+  --body: "Inter", sans-serif;
+}

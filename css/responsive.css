@@ -1,0 +1,171 @@
+@media (max-width: 1200px) {
+  h1 {
+    font-size: 4.6rem;
+  }
+
+  .page-hero h1 {
+    font-size: 4rem;
+  }
+
+  h2 {
+    font-size: 3rem;
+  }
+
+  .gear {
+    font-size: 7rem;
+  }
+
+  .nav {
+    position: fixed;
+    top: 78px;
+    right: 18px;
+    left: 18px;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 18px;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    color: var(--dark);
+    background: white;
+    box-shadow: var(--shadow);
+  }
+
+  .nav.open {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: grid;
+    place-items: center;
+  }
+
+  .card-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .timeline {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .timeline div::after {
+    display: none;
+  }
+}
+
+@media (max-width: 900px) {
+  h1 {
+    font-size: 3.6rem;
+  }
+
+  .page-hero h1 {
+    font-size: 3.2rem;
+  }
+
+  h2 {
+    font-size: 2.45rem;
+  }
+
+  .gear {
+    font-size: 5.5rem;
+  }
+
+  .header-actions .btn-small,
+  .header-actions .language,
+  .header-actions .icon-btn:not(.menu-toggle) {
+    display: none;
+  }
+
+  .hero {
+    min-height: 900px;
+  }
+
+  .hero-metrics {
+    right: 20px;
+    left: 20px;
+    grid-template-columns: 1fr;
+  }
+
+  .hero-metrics div {
+    border-right: 0;
+    border-bottom: 1px solid rgba(255,255,255,0.14);
+  }
+
+  .split,
+  .contact-layout,
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .badge-row {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .section {
+    padding: 72px 18px;
+  }
+
+  .site-header {
+    padding: 14px 18px;
+  }
+
+  .brand {
+    font-size: 1rem;
+  }
+
+  h1 {
+    font-size: 2.75rem;
+  }
+
+  .page-hero {
+    min-height: 420px;
+    padding: 120px 18px 60px;
+  }
+
+  .page-hero h1 {
+    font-size: 2.65rem;
+  }
+
+  h2 {
+    font-size: 2.05rem;
+  }
+
+  .gear {
+    font-size: 4rem;
+  }
+
+  .hero {
+    padding: 110px 18px 320px;
+    min-height: 940px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+  }
+
+  .hero-buttons .btn {
+    width: 100%;
+  }
+
+  .pill-grid,
+  .stats-grid,
+  .card-grid,
+  .timeline,
+  .badge-row {
+    grid-template-columns: 1fr;
+  }
+
+  .factory-stage {
+    min-height: 360px;
+  }
+
+  .video-band {
+    min-height: 440px;
+  }
+}
