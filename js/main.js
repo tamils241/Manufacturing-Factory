@@ -55,12 +55,74 @@ const faqs = [
   ["What is your MOQ?", "MOQ varies by product and tooling requirements. Our sales engineers can quote both pilot and production quantities."]
 ];
 
-function productCard([title, copy, image, features]) {
-  return `<article class="product-card" data-aos="fade-up"><img loading="lazy" src="${image}" alt="${title}"><div><h3>${title}</h3><p>${copy}</p><div class="feature-list">${features.map(item => `<span>${item}</span>`).join("")}</div><div class="link-row"><a href="#contact">View Details</a><a href="#contact">Download Brochure</a></div></div></article>`;
+function productCard([title, copy, image, features], index = 0) {
+  return `<article class="product-card" style="animation-delay:${index * 0.1}s"><div class="product-card-inner"><img loading="lazy" src="${image}" alt="${title}"><div><h3>${title}</h3><p>${copy}</p><div class="feature-list">${features.map(item => `<span>${item}</span>`).join("")}</div><div class="link-row"><a href="#contact">View Details</a><a href="#contact">Download Brochure</a></div></div></div></article>`;
 }
 
-function iconCard([title, icon, copy = "Reliable production support with certified process control."]) {
-  return `<article class="icon-card" data-aos="fade-up"><i class="fa-solid ${icon}"></i><h3>${title}</h3><p>${copy}</p></article>`;
+function slugify(value) {
+  return value.toLowerCase().replace(/&/g, "and").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+}
+
+function iconCard([title, icon, copy = "Reliable production support with certified process control."], index = 0) {
+  return `<article class="icon-card" id="${slugify(title)}" style="animation-delay:${index * 0.08}s"><i class="fa-solid ${icon}"></i><h3>${title}</h3><p>${copy}</p></article>`;
+}
+
+function addNavLists(nav) {
+  if (!nav || nav.dataset.listsReady) return;
+
+  const listMenus = {
+    "industries.html": [
+      ["Automotive", "fa-car", "industries.html#automotive"],
+      ["Aerospace", "fa-plane", "industries.html#aerospace"],
+      ["Medical", "fa-stethoscope", "industries.html#medical"],
+      ["Oil & Gas", "fa-oil-well", "industries.html#oil-and-gas"]
+    ],
+    "factory.html": [
+      ["3D Factory", "fa-cube", "factory.html#factoryCanvas"],
+      ["Machines", "fa-gears", "factory.html#machineSlides"],
+      ["Factory Audit", "fa-clipboard-check", "contact.html"],
+      ["Request Tour", "fa-calendar-check", "contact.html"]
+    ],
+    "gallery.html": [
+      ["Factory", "fa-industry", "gallery.html#galleryGrid"],
+      ["Machines", "fa-screwdriver-wrench", "gallery.html#galleryGrid"],
+      ["Products", "fa-boxes-stacked", "gallery.html#galleryGrid"],
+      ["Warehouse", "fa-warehouse", "gallery.html#galleryGrid"]
+    ],
+    "blog.html": [
+      ["New Machines", "fa-robot", "blog.html#newsGrid"],
+      ["Factory Expansion", "fa-building", "blog.html#newsGrid"],
+      ["Awards", "fa-award", "blog.html#newsGrid"],
+      ["Product Launches", "fa-bullhorn", "blog.html#newsGrid"]
+    ],
+    "careers.html": [
+      ["Production Engineer", "fa-gears", "careers.html#open-roles"],
+      ["Quality Specialist", "fa-clipboard-check", "careers.html#open-roles"],
+      ["Maintenance Technician", "fa-screwdriver-wrench", "careers.html#open-roles"],
+      ["Logistics Coordinator", "fa-truck-ramp-box", "careers.html#open-roles"]
+    ]
+  };
+
+  Object.entries(listMenus).forEach(([href, items]) => {
+    const link = [...nav.querySelectorAll(`a[href="${href}"]`)].find(item => item.parentElement === nav);
+    if (!link) return;
+
+    const wrapper = document.createElement("div");
+    wrapper.className = "nav-item";
+    const parentLink = link.cloneNode(true);
+    parentLink.className = "nav-link";
+    parentLink.innerHTML = `${link.textContent} <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>`;
+
+    const menu = document.createElement("div");
+    menu.className = "nav-list";
+    menu.setAttribute("role", "list");
+    menu.innerHTML = items.map(([label, icon, itemHref]) => `<a href="${itemHref}" role="listitem"><i class="fa-solid ${icon}"></i><span>${label}</span></a>`).join("");
+
+    wrapper.append(parentLink, menu);
+    link.replaceWith(wrapper);
+  });
+
+  nav.dataset.listsReady = "true";
 }
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -89,6 +151,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const nav = document.getElementById("nav");
   const menuToggle = document.getElementById("menuToggle");
   const backTop = document.getElementById("backTop");
+
+  addNavLists(nav);
 
   menuToggle?.addEventListener("click", () => nav?.classList.toggle("open"));
   nav?.querySelectorAll("a").forEach(link => link.addEventListener("click", () => nav.classList.remove("open")));
@@ -145,4 +209,14 @@ document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("playVideo")?.addEventListener("click", () => {
     window.open("https://www.youtube.com/results?search_query=manufacturing+factory+tour", "_blank", "noopener");
   });
+
+  const heroSlides = document.querySelectorAll("#heroBg .hero-slide");
+  if (heroSlides.length) {
+    let current = 0;
+    setInterval(() => {
+      heroSlides[current].classList.remove("active");
+      current = (current + 1) % heroSlides.length;
+      heroSlides[current].classList.add("active");
+    }, 5000);
+  }
 });

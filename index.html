@@ -60,11 +60,18 @@
       <a href="about.html">About</a>
       <a href="products.html">Products</a>
       <a href="services.html">Services</a>
-      <a href="industries.html">Industries</a>
-      <a href="factory.html">Factory</a>
-      <a href="gallery.html">Gallery</a>
-      <a href="blog.html">Blog</a>
-      <a href="careers.html">Careers</a>
+      <div class="nav-item">
+        <a class="nav-link" href="industries.html">
+          Pages <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+        </a>
+        <div class="nav-list" role="list">
+          <a href="industries.html" role="listitem"><i class="fa-solid fa-car"></i><span>Industries</span></a>
+          <a href="factory.html" role="listitem"><i class="fa-solid fa-industry"></i><span>Factory</span></a>
+          <a href="gallery.html" role="listitem"><i class="fa-solid fa-images"></i><span>Gallery</span></a>
+          <a href="blog.html" role="listitem"><i class="fa-solid fa-newspaper"></i><span>Blog</span></a>
+          <a href="careers.html" role="listitem"><i class="fa-solid fa-user-gear"></i><span>Careers</span></a>
+        </div>
+      </div>
       <a href="contact.html">Contact</a>
     </nav>
     <div class="header-actions">
@@ -74,16 +81,19 @@
         <option>ES</option>
         <option>HI</option>
       </select>
-      <a class="btn btn-small" href="contact.html">Request Quote</a>
+      <a href="login.html" class="nav-auth">Sign in</a>
+      <a href="signup.html" class="btn btn-small nav-cta">Sign Up</a>
       <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open menu"><i class="fa-solid fa-bars"></i></button>
     </div>
   </header>
 
   <main>
     <section class="hero" id="home">
-      <video class="hero-video" autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?auto=format&fit=crop&w=1800&q=80">
-        <source src="https://cdn.coverr.co/videos/coverr-robotic-arms-in-a-factory-8791/1080p.mp4" type="video/mp4">
-      </video>
+      <div class="hero-bg" id="heroBg">
+        <div class="hero-slide active" style="background-image: url('images/bg1.webp')"></div>
+        <div class="hero-slide" style="background-image: url('images/bg2.webp')"></div>
+        <div class="hero-slide" style="background-image: url('images/bg3.webp')"></div>
+      </div>
       <div class="hero-overlay"></div>
       <div class="particles" aria-hidden="true"></div>
       <div class="gear gear-one"><i class="fa-solid fa-gear"></i></div>
@@ -109,14 +119,18 @@
     <section class="section factory-lab" id="factory">
       <div class="section-heading" data-aos="fade-up">
         <p class="eyebrow">Digital Factory</p>
-        <h2>Interactive 3D Production Campus</h2>
-        <p>Rotate through Stackly's factory model with moving logistics, solar roofs, chimneys, roads, and production zones.</p>
+        <h2>Our Production Campus</h2>
+        <p>Explore Stackly's factory floor, machines, and production zones.</p>
       </div>
-      <div class="factory-stage">
-        <canvas id="factoryCanvas" aria-label="3D factory model"></canvas>
-        <div class="factory-controls">
-          <button class="icon-btn" id="dayNightToggle" type="button" aria-label="Toggle day and night"><i class="fa-solid fa-moon"></i></button>
-        </div>
+      <div class="card-grid">
+        <div class="card-3d"><div class="card-3d-inner"><img loading="lazy" src="images/bg1.webp" alt="Factory production line"><div class="card-3d-label">Production Line</div></div></div>
+        <div class="card-3d"><div class="card-3d-inner"><img loading="lazy" src="images/bg2.webp" alt="Factory equipment"><div class="card-3d-label">Equipment</div></div></div>
+        <div class="card-3d"><div class="card-3d-inner"><img loading="lazy" src="images/bg3.webp" alt="Manufacturing floor"><div class="card-3d-label">Manufacturing Floor</div></div></div>
+        <div class="card-3d"><div class="card-3d-inner"><img loading="lazy" src="images/bg4.webp" alt="Factory warehouse"><div class="card-3d-label">Warehouse</div></div></div>
+        <div class="card-3d"><div class="card-3d-inner"><img loading="lazy" src="https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=600&q=80" alt="CNC machining"><div class="card-3d-label">CNC Machining</div></div></div>
+        <div class="card-3d"><div class="card-3d-inner"><img loading="lazy" src="https://images.unsplash.com/photo-1565043666747-69f6646db940?auto=format&fit=crop&w=600&q=80" alt="Assembly line"><div class="card-3d-label">Assembly Line</div></div></div>
+        <div class="card-3d"><div class="card-3d-inner"><img loading="lazy" src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=600&q=80" alt="Robotics"><div class="card-3d-label">Robotics</div></div></div>
+        <div class="card-3d"><div class="card-3d-inner"><img loading="lazy" src="https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?auto=format&fit=crop&w=600&q=80" alt="Quality inspection"><div class="card-3d-label">Quality Control</div></div></div>
       </div>
     </section>
 
@@ -169,10 +183,6 @@
     </section>
 
     <section class="section industries" id="industries">
-      <div class="section-heading" data-aos="fade-up">
-        <p class="eyebrow">Industries Served</p>
-        <h2>Manufacturing support for demanding sectors.</h2>
-      </div>
       <div class="card-grid icon-grid" id="industryGrid"></div>
     </section>
 
@@ -344,12 +354,11 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/three@0.164.1/build/three.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script src="js/main.js"></script>
   <script src="js/animations.js"></script>
   <script src="js/slider.js"></script>
-  <script src="js/three-factory.js"></script>
   <script src="js/contact.js"></script>
 </body>
 </html>
+
