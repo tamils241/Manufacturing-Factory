@@ -1,12 +1,12 @@
 const products = [
-  ["Industrial Machines", "Heavy-duty machines for repeatable production lines.", "https://images.unsplash.com/photo-1565043666747-69f6646db940?auto=format&fit=crop&w=900&q=80", ["PLC", "Automation", "High output"]],
-  ["Automotive Parts", "Precision machined and assembled components for OEM programs.", "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=900&q=80", ["IATF-ready", "Traceable", "Durable"]],
-  ["Electrical Panels", "Safe, tested control panels and distribution systems.", "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=900&q=80", ["Wired", "Tested", "Documented"]],
-  ["Steel Components", "Fabricated steel parts with cutting, welding, and finishing.", "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=900&q=80", ["Laser cut", "Welded", "Coated"]],
-  ["Plastic Injection Parts", "Molded plastic parts with tight tolerance and stable supply.", "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=900&q=80", ["Tooling", "Molding", "QC"]],
-  ["CNC Products", "Milled and turned CNC products for advanced assemblies.", "https://images.unsplash.com/photo-1605902711622-cfb43c4437d4?auto=format&fit=crop&w=900&q=80", ["3-axis", "5-axis", "CMM"]],
-  ["Hydraulic Equipment", "Hydraulic systems, manifolds, and tested assemblies.", "https://images.unsplash.com/photo-1581092919535-7146ff1a590b?auto=format&fit=crop&w=900&q=80", ["Pressure tested", "Sealed", "Reliable"]],
-  ["Robotics Systems", "Robotic cells for handling, welding, and packaging.", "https://images.unsplash.com/photo-1561144257-e32e8efc6c4f?auto=format&fit=crop&w=900&q=80", ["Robots", "Vision", "Safety"]]
+  ["Industrial Machines", "Heavy-duty machines for repeatable production lines.", "images/c6.webp", ["PLC", "Automation", "High output"]],
+  ["Automotive Parts", "Precision machined and assembled components for OEM programs.", "images/c7.webp", ["IATF-ready", "Traceable", "Durable"]],
+  ["Electrical Panels", "Safe, tested control panels and distribution systems.", "images/c8.webp", ["Wired", "Tested", "Documented"]],
+  ["Steel Components", "Fabricated steel parts with cutting, welding, and finishing.", "images/c9.webp", ["Laser cut", "Welded", "Coated"]],
+  ["Plastic Injection Parts", "Molded plastic parts with tight tolerance and stable supply.", "images/10.webp", ["Tooling", "Molding", "QC"]],
+  ["CNC Products", "Milled and turned CNC products for advanced assemblies.", "images/12.webp", ["3-axis", "5-axis", "CMM"]],
+  ["Hydraulic Equipment", "Hydraulic systems, manifolds, and tested assemblies.", "images/c11.webp", ["Pressure tested", "Sealed", "Reliable"]],
+  ["Robotics Systems", "Robotic cells for handling, welding, and packaging.", "images/bg3.webp", ["Robots", "Vision", "Safety"]]
 ];
 
 const industries = [
@@ -36,14 +36,14 @@ const why = [
 ];
 
 const gallery = [
-  ["factory", "Factory", "https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=900&q=80"],
-  ["machines", "Machines", "https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?auto=format&fit=crop&w=900&q=80"],
-  ["products", "Products", "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=900&q=80"],
-  ["warehouse", "Warehouse", "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=900&q=80"],
-  ["workers", "Workers", "https://images.unsplash.com/photo-1581091215367-59ab6c189c0b?auto=format&fit=crop&w=900&q=80"],
-  ["factory", "Production", "https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=900&q=80"],
-  ["machines", "CNC Cell", "https://images.unsplash.com/photo-1605902711622-cfb43c4437d4?auto=format&fit=crop&w=900&q=80"],
-  ["warehouse", "Logistics", "https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=900&q=80"]
+  ["factory", "Factory", "images/factory.webp"],
+  ["machines", "Machines", "images/machines.webp"],
+  ["products", "Products", "images/products.webp"],
+  ["warehouse", "Warehouse", "images/warehouse.webp"],
+  ["workers", "Workers", "images/workers.webp"],
+  ["factory", "Production", "images/production.webp"],
+  ["machines", "CNC Cell", "images/cnc-cell.webp"],
+  ["warehouse", "Logistics", "images/logistics.webp"]
 ];
 
 const faqs = [
@@ -141,11 +141,11 @@ document.addEventListener("DOMContentLoaded", () => {
   if (galleryGrid) galleryGrid.innerHTML = gallery.map(([cat, title, src]) => `<button class="gallery-item" data-category="${cat}" data-src="${src}"><img loading="lazy" src="${src}" alt="${title}"><span>${title}</span></button>`).join("");
   if (faqList) faqList.innerHTML = faqs.map(([q, a]) => `<div class="accordion-item"><button class="accordion-button" type="button">${q}<i class="fa-solid fa-chevron-down"></i></button><div class="accordion-content">${a}</div></div>`).join("");
   if (newsGrid) newsGrid.innerHTML = [
-    ["New Robotic Welding Cells Installed", "https://images.unsplash.com/photo-1561144257-e32e8efc6c4f?auto=format&fit=crop&w=900&q=80"],
-    ["Factory Expansion Opens New Assembly Hall", "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=900&q=80"],
-    ["Stackly Wins Supplier Quality Award", "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=900&q=80"],
-    ["Hydraulic Product Line Launches", "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=900&q=80"]
-  ].map(([title, image]) => `<article class="news-card" data-aos="fade-up"><img loading="lazy" src="${image}" alt="${title}"><div><h3>${title}</h3><p>Latest operational progress from Stackly's production teams.</p></div></article>`).join("");
+    ["New Robotic Welding Cells Installed", "images/New Robotic Welding Cells Installed.webp"],
+    ["Factory Expansion Opens New Assembly Hall", "images/Factory Expansion Opens New Assembly Hall.webp"],
+    ["Stackly Wins Supplier Quality Award", "images/Stackly Wins Supplier Quality Award.webp"],
+    ["Hydraulic Product Line Launches", "images/Hydraulic.webp"]
+  ].map(([title, image]) => `<article class="news-card" data-aos="fade-up"><div class="news-card-inner"><img loading="lazy" src="${image}" alt="${title}"><div><h3>${title}</h3><p>Latest operational progress from Stackly's production teams.</p></div></div></article>`).join("");
 
   const header = document.getElementById("header");
   const nav = document.getElementById("nav");
@@ -154,8 +154,49 @@ document.addEventListener("DOMContentLoaded", () => {
 
   addNavLists(nav);
 
-  menuToggle?.addEventListener("click", () => nav?.classList.toggle("open"));
-  nav?.querySelectorAll("a").forEach(link => link.addEventListener("click", () => nav.classList.remove("open")));
+  const closeMenu = document.getElementById("closeMenu");
+  const overlay = document.getElementById("menuOverlay");
+
+  if (menuToggle) {
+    menuToggle.onclick = function () {
+      nav.classList.add("open");
+      overlay.classList.add("show");
+      document.body.style.overflow = "hidden";
+    };
+  }
+
+  if (closeMenu) {
+    closeMenu.onclick = function () {
+      nav.classList.remove("open");
+      overlay.classList.remove("show");
+      document.body.style.overflow = "";
+    };
+  }
+
+  if (overlay) {
+    overlay.onclick = function () {
+      nav.classList.remove("open");
+      overlay.classList.remove("show");
+      document.body.style.overflow = "";
+    };
+  }
+
+  if (nav) {
+    nav.querySelectorAll("a").forEach(function (link) {
+      link.onclick = function () {
+        nav.classList.remove("open");
+        overlay?.classList.remove("show");
+        document.body.style.overflow = "";
+      };
+    });
+  }
+
+  const pageToggle = document.querySelector(".page-toggle");
+  if (pageToggle) {
+    pageToggle.onclick = function () {
+      this.parentElement.classList.toggle("active");
+    };
+  }
 
   window.addEventListener("scroll", () => {
     header?.classList.toggle("scrolled", window.scrollY > 40);

@@ -20,30 +20,36 @@
   <div class="page-loader"><div class="loader-mark"><i class="fa-solid fa-industry"></i></div><span>Stackly Manufacturing</span></div>
   <header class="site-header" id="header">
     <a class="brand" href="index.html" aria-label="Stackly home">
-      <span class="brand-icon"><i class="fa-solid fa-industry"></i></span>
-      <span>Stackly</span>
+      <img src="images/logo.webp" alt="Stackly">
     </a>
     <nav class="nav" id="nav" aria-label="Primary navigation">
-      <a href="index.html">Home</a>
+      <div class="mobile-nav-top">
+        <a href="index.html">Home</a>
+        <button id="closeMenu" class="close-menu" type="button">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      <a href="index.html" class="desktop-home">Home</a>
       <a href="about.html">About</a>
       <a href="products.html">Products</a>
       <a href="services.html">Services</a>
-      <div class="nav-item">
-        <a class="nav-link" href="industries.html">
-          Pages <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
-        </a>
-        <div class="nav-list" role="list">
-          <a href="industries.html" role="listitem"><i class="fa-solid fa-car"></i><span>Industries</span></a>
-          <a href="factory.html" role="listitem"><i class="fa-solid fa-industry"></i><span>Factory</span></a>
-          <a href="gallery.html" role="listitem"><i class="fa-solid fa-images"></i><span>Gallery</span></a>
-          <a href="blog.html" role="listitem"><i class="fa-solid fa-newspaper"></i><span>Blog</span></a>
-          <a href="careers.html" role="listitem"><i class="fa-solid fa-user-gear"></i><span>Careers</span></a>
+      <div class="nav-item has-dropdown">
+        <button class="nav-link page-toggle">
+          <span>Pages</span>
+          <i class="fa-solid fa-chevron-down"></i>
+        </button>
+        <div class="nav-list">
+          <a href="industries.html"><i class="fa-solid fa-car"></i> Industries</a>
+          <a href="factory.html"><i class="fa-solid fa-industry"></i> Factory</a>
+          <a href="gallery.html"><i class="fa-solid fa-images"></i> Gallery</a>
+          <a href="blog.html"><i class="fa-solid fa-newspaper"></i> Blog</a>
+          <a href="careers.html"><i class="fa-solid fa-user-gear"></i> Careers</a>
         </div>
       </div>
       <a href="contact.html">Contact</a>
     </nav>
     <div class="header-actions">
-      <button class="icon-btn" type="button" aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
+      <a href="404.html" class="icon-btn" aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></a>
       <select class="language" aria-label="Select language">
         <option>EN</option>
         <option>ES</option>
@@ -54,8 +60,9 @@
       <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open menu"><i class="fa-solid fa-bars"></i></button>
     </div>
   </header>
+  <div id="menuOverlay"></div>
   <main>
-    <section class="page-hero" style="--page-image: url('https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=1800&q=80')">
+    <section class="page-hero hero-about">
       <div><p class="eyebrow">About Stackly</p><h1>Engineering-led manufacturing with global discipline.</h1><p>Stackly Manufacturing Factory has built a 20-year track record in precision parts, automated systems, and certified production programs.</p></div>
     </section>
     <section class="section detail-band">
@@ -78,11 +85,124 @@
         </div>
       </div>
     </section>
+    <section class="section detail-band" style="background: #f5f5f5;">
+      <div class="split">
+        <div data-aos="fade-right">
+          <p class="eyebrow">Capabilities</p>
+          <h2>Full-service manufacturing under one roof.</h2>
+          <p>Our integrated facility combines cutting-edge technology with skilled craftsmanship to deliver complex solutions with precision and speed.</p>
+          <ul class="detail-list">
+            <li><i class="fa-solid fa-microchip"></i><span><strong>CNC Machining:</strong> 5-axis precision with tolerances to ±0.01mm for complex geometries.</span></li>
+            <li><i class="fa-solid fa-fire"></i><span><strong>Welding & Fabrication:</strong> MIG, TIG, spot welding with certified operators and quality testing.</span></li>
+            <li><i class="fa-solid fa-robot"></i><span><strong>Robotics Integration:</strong> Automated assembly and material handling systems for high-volume production.</span></li>
+            <li><i class="fa-solid fa-flask"></i><span><strong>Quality Assurance:</strong> In-process testing, CMM inspection, and full traceability documentation.</span></li>
+          </ul>
+        </div>
+        <div class="stats-grid" data-aos="fade-left">
+          <div><strong>150+</strong><span>CNC & Fabrication Machines</span></div>
+          <div><strong>25+</strong><span>Robotic Work Cells</span></div>
+          <div><strong>100K sq ft</strong><span>Manufacturing Floor</span></div>
+          <div><strong>24/7</strong><span>Production Capacity</span></div>
+        </div>
+      </div>
+    </section>
+    <section class="section detail-band">
+      <div style="text-align: center; margin-bottom: 3rem;">
+        <p class="eyebrow">Our Team</p>
+        <h2>Industry leaders driving innovation.</h2>
+        <p>With over 500 skilled professionals, Stackly brings expertise across engineering, operations, quality, and supply chain management.</p>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+        <div class="team-card">
+          <div class="team-card-inner">
+            <div class="team-avatar"><img src="images/team/1.webp" alt="Rajesh Kumar"></div>
+            <h3>Rajesh Kumar</h3>
+            <p class="team-title">Chief Executive Officer</p>
+            <p class="team-desc">30+ years in manufacturing strategy and operations.</p>
+          </div>
+        </div>
+        <div class="team-card">
+          <div class="team-card-inner">
+            <div class="team-avatar"><img src="images/team/2.webp" alt="Priya Desai"></div>
+            <h3>Priya Desai</h3>
+            <p class="team-title">Director of Operations</p>
+            <p class="team-desc">Lean Six Sigma certified with 15+ years of production excellence.</p>
+          </div>
+        </div>
+        <div class="team-card">
+          <div class="team-card-inner">
+            <div class="team-avatar"><img src="images/team/3.webp" alt="Marcus Chen"></div>
+            <h3>Marcus Chen</h3>
+            <p class="team-title">Chief Technology Officer</p>
+            <p class="team-desc">Expert in Industry 4.0, automation, and digital manufacturing.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section detail-band" style="background: #f5f5f5;">
+      <div style="text-align: center; margin-bottom: 3rem;">
+        <p class="eyebrow">Quality & Compliance</p>
+        <h2>Certified for the world's toughest standards.</h2>
+        <p>Every part produced meets rigorous quality benchmarks and international certifications to ensure reliability and compliance.</p>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem;">
+        <div class="cert-card">
+          <div class="cert-card-inner">
+            <i class="fa-solid fa-certificate"></i>
+            <h3>ISO 9001:2015</h3>
+            <p>Quality Management System certified for consistent excellence.</p>
+          </div>
+        </div>
+        <div class="cert-card">
+          <div class="cert-card-inner">
+            <i class="fa-solid fa-shield-halved"></i>
+            <h3>ISO 13485:2016</h3>
+            <p>Medical device manufacturing quality standards.</p>
+          </div>
+        </div>
+        <div class="cert-card">
+          <div class="cert-card-inner">
+            <i class="fa-solid fa-gears"></i>
+            <h3>AS9100D</h3>
+            <p>Aerospace quality and compliance certification.</p>
+          </div>
+        </div>
+        <div class="cert-card">
+          <div class="cert-card-inner">
+            <i class="fa-solid fa-car"></i>
+            <h3>IATF 16949:2016</h3>
+            <p>Automotive industry quality framework compliance.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section detail-band">
+      <div class="split">
+        <div data-aos="fade-right">
+          <p class="eyebrow">Why Choose Stackly</p>
+          <h2>Partnership, not just production.</h2>
+          <p>We don't just manufacture parts—we build long-term relationships based on transparency, reliability, and shared success.</p>
+          <ul class="detail-list">
+            <li><i class="fa-solid fa-handshake"></i><span><strong>Dedicated Account Teams:</strong> Direct access to engineering and operations specialists for your projects.</span></li>
+            <li><i class="fa-solid fa-chart-line"></i><span><strong>Scalability:</strong> Grow from prototypes to millions of units with consistent quality and delivery.</span></li>
+            <li><i class="fa-solid fa-clock"></i><span><strong>Fast Turnaround:</strong> Express tooling and expedited production for time-sensitive projects.</span></li>
+            <li><i class="fa-solid fa-lock"></i><span><strong>Confidentiality:</strong> Secure facility with NDA protection and proprietary process agreements.</span></li>
+          </ul>
+        </div>
+        <div data-aos="fade-left" style="position: relative; min-height: 300px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+          <div style="text-align: center; color: white; padding: 2rem;">
+            <h3 style="font-size: 2rem; margin-bottom: 1rem;">Ready to partner with us?</h3>
+            <p style="margin-bottom: 1.5rem;color: black;">Let's discuss your manufacturing challenges and opportunities.</p>
+            <a href="contact.html" class="btn btn-conversation">Start a Conversation</a>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
   <footer class="footer">
     <div class="footer-grid">
       <div>
-        <a class="brand" href="index.html"><span class="brand-icon"><i class="fa-solid fa-industry"></i></span><span>Stackly</span></a>
+        <a class="brand" href="index.html"><img src="images/logo.webp" alt="Stackly"></a>
         <p>Precision manufacturing, engineered systems, and certified production for global partners.</p>
       </div>
       <div><h3>Products</h3><a href="products.html">CNC Products</a><a href="products.html">Electrical Panels</a><a href="products.html">Robotics Systems</a></div>
@@ -91,7 +211,7 @@
       <div>
         <h3>Newsletter</h3>
         <form class="newsletter"><input type="email" placeholder="Email address"><button class="icon-btn" type="submit" aria-label="Subscribe"><i class="fa-solid fa-arrow-right"></i></button></form>
-        <div class="socials"><a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a><a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a><a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a></div>
+        <div class="socials"><a href="404.html" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a><a href="404.html" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a><a href="404.html" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a></div>
       </div>
     </div>
     <div class="footer-bottom">&copy; 2026 Stackly Manufacturing Factory. All Rights Reserved.</div>

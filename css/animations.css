@@ -25,3 +25,21 @@
   0% { transform: translateY(20px); opacity: 0; }
   100% { transform: translateY(0); opacity: 1; }
 }
+
+@keyframes colorCycle {
+  0%   { color: #667eea; }
+  20%  { color: #f39c12; }
+  40%  { color: #22c55e; }
+  60%  { color: #0b3d91; }
+  80%  { color: #e91e63; }
+  100% { color: #667eea; }
+}
+
+.hero-word {
+  display: inline-block;
+  perspective: 600px;
+}
+
+.hero-word > span {
+  display: inline-block;
+}

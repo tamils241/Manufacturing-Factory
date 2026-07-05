@@ -7,30 +7,36 @@
   <div class="page-loader"><div class="loader-mark"><i class="fa-solid fa-industry"></i></div><span>Stackly Manufacturing</span></div>
   <header class="site-header" id="header">
     <a class="brand" href="index.html" aria-label="Stackly home">
-      <span class="brand-icon"><i class="fa-solid fa-industry"></i></span>
-      <span>Stackly</span>
+      <img src="images/logo.webp" alt="Stackly">
     </a>
     <nav class="nav" id="nav" aria-label="Primary navigation">
-      <a href="index.html">Home</a>
+      <div class="mobile-nav-top">
+        <a href="index.html">Home</a>
+        <button id="closeMenu" class="close-menu" type="button">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      <a href="index.html" class="desktop-home">Home</a>
       <a href="about.html">About</a>
       <a href="products.html">Products</a>
       <a href="services.html">Services</a>
-      <div class="nav-item">
-        <a class="nav-link" href="industries.html">
-          Pages <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
-        </a>
-        <div class="nav-list" role="list">
-          <a href="industries.html" role="listitem"><i class="fa-solid fa-car"></i><span>Industries</span></a>
-          <a href="factory.html" role="listitem"><i class="fa-solid fa-industry"></i><span>Factory</span></a>
-          <a href="gallery.html" role="listitem"><i class="fa-solid fa-images"></i><span>Gallery</span></a>
-          <a href="blog.html" role="listitem"><i class="fa-solid fa-newspaper"></i><span>Blog</span></a>
-          <a href="careers.html" role="listitem"><i class="fa-solid fa-user-gear"></i><span>Careers</span></a>
+      <div class="nav-item has-dropdown">
+        <button class="nav-link page-toggle">
+          <span>Pages</span>
+          <i class="fa-solid fa-chevron-down"></i>
+        </button>
+        <div class="nav-list">
+          <a href="industries.html"><i class="fa-solid fa-car"></i> Industries</a>
+          <a href="factory.html"><i class="fa-solid fa-industry"></i> Factory</a>
+          <a href="gallery.html"><i class="fa-solid fa-images"></i> Gallery</a>
+          <a href="blog.html"><i class="fa-solid fa-newspaper"></i> Blog</a>
+          <a href="careers.html"><i class="fa-solid fa-user-gear"></i> Careers</a>
         </div>
       </div>
       <a href="contact.html">Contact</a>
     </nav>
     <div class="header-actions">
-      <button class="icon-btn" type="button" aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
+      <a href="404.html" class="icon-btn" aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></a>
       <select class="language" aria-label="Select language">
         <option>EN</option>
         <option>ES</option>
@@ -41,11 +47,13 @@
       <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open menu"><i class="fa-solid fa-bars"></i></button>
     </div>
   </header>
-  <main><section class="page-hero" style="--page-image: url('https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=1800&q=80')"><div><p class="eyebrow">Contact</p><h1>Request a quote or schedule a factory audit.</h1><p>Send your drawings, product requirements, or application details and the Stackly team will respond.</p></div></section><section class="section contact"><div class="contact-layout"><div class="contact-info"><p class="eyebrow">Company Information</p><h2>Talk to Stackly.</h2><p><i class="fa-solid fa-location-dot"></i> 4200 Industrial Parkway, Houston, TX 77002</p><p><i class="fa-solid fa-phone"></i> +1 555 0199</p><p><i class="fa-solid fa-envelope"></i> sales@stacklymanufacturing.com</p><iframe title="Stackly factory location" loading="lazy" src="https://www.google.com/maps?q=Houston%20Industrial%20Parkway&output=embed"></iframe></div><form class="quote-form" id="quoteForm"><input type="text" name="name" placeholder="Name" required><input type="text" name="company" placeholder="Company" required><input type="email" name="email" placeholder="Email" required><input type="tel" name="phone" placeholder="Phone"><select name="product" required><option value="">Product Interest</option><option>Industrial Machines</option><option>Automotive Parts</option><option>CNC Products</option><option>Robotics Systems</option><option>Career Application</option></select><textarea name="message" placeholder="Message" rows="5" required></textarea><button class="btn" type="submit">Send Inquiry</button><p class="form-status" id="formStatus" role="status"></p></form></div></section></main>
+  <div id="menuOverlay"></div>
+  <main><section class="page-hero hero-contact"><div><p class="eyebrow">Contact</p><h1>Request a quote or schedule a factory audit.</h1><p>Send your drawings, product requirements, or application details and the Stackly team will respond.</p></div></section><section class="section contact"><div class="contact-layout"><div class="contact-info"><p class="eyebrow">Company Information</p><h2>Talk to Stackly.</h2><p><i class="fa-solid fa-location-dot"></i> 4200 Industrial Parkway, Houston, TX 77002</p><p><i class="fa-solid fa-phone"></i> +1 555 0199</p><p><i class="fa-solid fa-envelope"></i> sales@stacklymanufacturing.com</p><iframe title="Stackly factory location" loading="lazy" src="https://www.google.com/maps?q=Houston%20Industrial%20Parkway&output=embed"></iframe></div><form class="quote-form" id="quoteForm"><input type="text" name="name" placeholder="Name" pattern="[A-Za-z\s\-']+" title="Letters only" maxlength="16" oninput="this.value=this.value.replace(/[0-9]/g,'')" required><input type="text" name="company" placeholder="Company" maxlength="16" required><input type="email" name="email" placeholder="Email" required><input type="tel" name="phone" placeholder="Phone" pattern="[0-9]{10}" title="10-digit phone number" maxlength="10" oninput="this.value=this.value.replace(/[^0-9]/g,'').slice(0,10)"><select name="product" required><option value="">Product Interest</option><option>Industrial Machines</option><option>Automotive Parts</option><option>CNC Products</option><option>Robotics Systems</option><option>Career Application</option></select><textarea name="message" placeholder="Message" rows="5" required></textarea><button class="btn" type="submit">Send Inquiry</button><p class="form-status" id="formStatus" role="status"></p></form></div></section></main>
+ 
   <footer class="footer">
     <div class="footer-grid">
       <div>
-        <a class="brand" href="index.html"><span class="brand-icon"><i class="fa-solid fa-industry"></i></span><span>Stackly</span></a>
+        <a class="brand" href="index.html"><img src="images/logo.webp" alt="Stackly"></a>
         <p>Precision manufacturing, engineered systems, and certified production for global partners.</p>
       </div>
       <div><h3>Products</h3><a href="products.html">CNC Products</a><a href="products.html">Electrical Panels</a><a href="products.html">Robotics Systems</a></div>
@@ -54,7 +62,7 @@
       <div>
         <h3>Newsletter</h3>
         <form class="newsletter"><input type="email" placeholder="Email address"><button class="icon-btn" type="submit" aria-label="Subscribe"><i class="fa-solid fa-arrow-right"></i></button></form>
-        <div class="socials"><a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a><a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a><a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a></div>
+        <div class="socials"><a href="404.html" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a><a href="404.html" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a><a href="404.html" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a></div>
       </div>
     </div>
     <div class="footer-bottom">&copy; 2026 Stackly Manufacturing Factory. All Rights Reserved.</div>

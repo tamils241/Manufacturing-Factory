@@ -14,61 +14,68 @@
   <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body>
-  <header class="site-header scrolled" id="header">
-    <a class="brand" href="index.html" aria-label="Stackly home">
-      <span class="brand-icon"><i class="fa-solid fa-industry"></i></span>
-      <span>Stackly</span>
-    </a>
-    <nav class="nav" id="nav" aria-label="Primary navigation">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="products.html">Products</a>
-      <a href="services.html">Services</a>
-      <div class="nav-item">
-        <a class="nav-link" href="industries.html">
-          Pages <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
-        </a>
-        <div class="nav-list" role="list">
-          <a href="industries.html" role="listitem"><i class="fa-solid fa-car"></i><span>Industries</span></a>
-          <a href="factory.html" role="listitem"><i class="fa-solid fa-industry"></i><span>Factory</span></a>
-          <a href="gallery.html" role="listitem"><i class="fa-solid fa-images"></i><span>Gallery</span></a>
-          <a href="blog.html" role="listitem"><i class="fa-solid fa-newspaper"></i><span>Blog</span></a>
-          <a href="careers.html" role="listitem"><i class="fa-solid fa-user-gear"></i><span>Careers</span></a>
-        </div>
-      </div>
-      <a href="contact.html">Contact</a>
-    </nav>
-    <div class="header-actions">
-      <button class="icon-btn" type="button" aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
-      <select class="language" aria-label="Select language">
-        <option>EN</option>
-        <option>ES</option>
-        <option>HI</option>
-      </select>
-      <a href="login.html" class="nav-auth">Sign in</a>
-      <a href="signup.html" class="btn btn-small nav-cta">Sign Up</a>
-      <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open menu"><i class="fa-solid fa-bars"></i></button>
-    </div>
-  </header>
+  
   <main>
-    <section class="section contact" style="padding-top: 150px;">
-      <div class="contact-layout">
-        <div class="contact-info">
+    <section class="section contact" style="min-height:100vh;display:flex;align-items:center;justify-content:center">
+      <div style="width:100%;max-width:480px;margin:0 auto">
+        <div style="text-align:center;margin-bottom:24px">
           <p class="eyebrow">New Account</p>
-          <h2>Create your Stackly portal account.</h2>
-          <p>Start quote requests, save product interests, and coordinate with Stackly sales engineers.</p>
+          <h2 style="font-size:2rem">Create your Stackly portal account.</h2>
+          <p style="color:var(--muted)">Start quote requests, save product interests, and coordinate with Stackly sales engineers.</p>
         </div>
-        <form class="quote-form">
-          <input type="text" placeholder="Full Name" required>
+        <form class="quote-form" style="margin:0 auto">
+          <input type="text" placeholder="Full Name" pattern="[A-Za-z\s\-']+" title="Letters only" maxlength="16" oninput="this.value=this.value.replace(/[0-9]/g,'')" required>
           <input type="text" placeholder="Company" required>
           <input type="email" placeholder="Email" required>
-          <input type="password" placeholder="Password" required>
+          <input type="password" placeholder="Password" id="password" maxlength="8" oninput="validatePasswords()" required>
+          <input type="password" placeholder="Confirm Password" id="confirmPassword" maxlength="8" oninput="validatePasswords()" required>
+          <p id="passwordError" style="color:#e53e3e;font-size:0.85rem;font-weight:600;display:none">Passwords do not match</p>
+          <p id="roleError" style="color:#e53e3e;font-size:0.85rem;font-weight:600;display:none;text-align:center">Please select a role</p>
+          <div style="display:flex;gap:12px;padding:8px 0;justify-content:center">
+            <label id="roleAdmin" style="flex:1;max-width:160px;text-align:center;padding:12px;border:2px solid var(--line);border-radius:var(--radius);cursor:pointer;transition:0.2s;font-weight:600">
+              <input type="radio" name="role" value="admin" style="display:none" onchange="document.getElementById('roleAdmin').style.borderColor='var(--primary)';document.getElementById('roleCustomer').style.borderColor='var(--line)'"> Admin
+            </label>
+            <label id="roleCustomer" style="flex:1;max-width:160px;text-align:center;padding:12px;border:2px solid var(--line);border-radius:var(--radius);cursor:pointer;transition:0.2s;font-weight:600">
+              <input type="radio" name="role" value="customer" style="display:none" onchange="document.getElementById('roleCustomer').style.borderColor='var(--primary)';document.getElementById('roleAdmin').style.borderColor='var(--line)'"> Customer
+            </label>
+          </div>
           <button class="btn" type="submit">Create Account</button>
           <p class="form-status">Demo form only. Connect authentication before launch.</p>
+          <p style="text-align:center;margin-top:8px">Already have an account? <a href="login.html" style="color:var(--secondary);font-weight:700">Sign In</a></p>
+          <p style="text-align:center;margin-top:4px"><a href="index.html" style="color:#64748b;font-size:0.85rem;transition:color 0.2s" onmouseover="this.style.color='#f39c12'" onmouseout="this.style.color='#64748b'"><i class="fa-solid fa-house"></i> Back to Home</a></p>
         </form>
       </div>
     </section>
   </main>
+  <script>
+    function validatePasswords() {
+      var pwd = document.getElementById('password').value;
+      var confirm = document.getElementById('confirmPassword').value;
+      var error = document.getElementById('passwordError');
+      if (confirm.length > 0 && pwd !== confirm) {
+        error.style.display = 'block';
+      } else {
+        error.style.display = 'none';
+      }
+    }
+    document.querySelector('.quote-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      var pwd = document.getElementById('password').value;
+      var confirm = document.getElementById('confirmPassword').value;
+      var roleSelected = document.querySelector('input[name="role"]:checked');
+      document.getElementById('passwordError').style.display = 'none';
+      document.getElementById('roleError').style.display = 'none';
+      if (!roleSelected) {
+        document.getElementById('roleError').style.display = 'block';
+        return;
+      }
+      if (pwd !== confirm) {
+        document.getElementById('passwordError').style.display = 'block';
+        return;
+      }
+      window.location.href = 'login.html';
+    });
+  </script>
   <script src="js/main.js"></script>
 </body>
 </html>

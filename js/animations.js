@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
     onComplete: () => document.querySelector(".page-loader")?.remove()
   });
 
-  gsap.from(".hero-content > *", {
+  gsap.from(".hero-content > *:not(h1)", {
     y: 36,
     opacity: 0,
     duration: 0.8,
@@ -29,9 +29,43 @@ document.addEventListener("DOMContentLoaded", () => {
     ease: "power3.out"
   });
 
+  document.querySelectorAll(".hero-content h1, .page-hero h1").forEach(h1 => {
+    if (h1.dataset.animated3d) return;
+    h1.dataset.animated3d = "true";
+    const lines = h1.innerHTML.split(/<br\s*\/?>/i);
+    h1.innerHTML = lines.map(line => {
+      const words = line.trim().split(/\s+/);
+      return words.map(word => `<span class="hero-word"><span>${word}</span></span>`).join(" ");
+    }).join("<br>");
+    gsap.from(h1.querySelectorAll(".hero-word > span"), {
+      opacity: 0,
+      rotationY: -90,
+      x: -40,
+      duration: 1.2,
+      stagger: 0.06,
+      ease: "power4.out",
+      delay: 0.5
+    });
+  });
+
   gsap.to(".particles", {
     yPercent: 12,
     scrollTrigger: window.ScrollTrigger ? { trigger: ".hero", scrub: true } : undefined
+  });
+
+  document.querySelectorAll(".section-heading").forEach(heading => {
+    if (heading.dataset.headingAnimated) return;
+    heading.dataset.headingAnimated = "true";
+    const children = [...heading.children];
+    if (!children.length) return;
+    gsap.from(children, {
+      y: 40,
+      opacity: 0,
+      duration: 0.7,
+      stagger: 0.1,
+      ease: "power3.out",
+      scrollTrigger: window.ScrollTrigger ? { trigger: heading, start: "top 85%" } : undefined
+    });
   });
 
   document.querySelectorAll(".counter").forEach(counter => {

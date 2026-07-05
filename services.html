@@ -12,30 +12,36 @@
   <div class="page-loader"><div class="loader-mark"><i class="fa-solid fa-industry"></i></div><span>Stackly Manufacturing</span></div>
   <header class="site-header" id="header">
     <a class="brand" href="index.html" aria-label="Stackly home">
-      <span class="brand-icon"><i class="fa-solid fa-industry"></i></span>
-      <span>Stackly</span>
+      <img src="images/logo.webp" alt="Stackly">
     </a>
     <nav class="nav" id="nav" aria-label="Primary navigation">
-      <a href="index.html">Home</a>
+      <div class="mobile-nav-top">
+        <a href="index.html">Home</a>
+        <button id="closeMenu" class="close-menu" type="button">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      <a href="index.html" class="desktop-home">Home</a>
       <a href="about.html">About</a>
       <a href="products.html">Products</a>
       <a href="services.html">Services</a>
-      <div class="nav-item">
-        <a class="nav-link" href="industries.html">
-          Pages <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
-        </a>
-        <div class="nav-list" role="list">
-          <a href="industries.html" role="listitem"><i class="fa-solid fa-car"></i><span>Industries</span></a>
-          <a href="factory.html" role="listitem"><i class="fa-solid fa-industry"></i><span>Factory</span></a>
-          <a href="gallery.html" role="listitem"><i class="fa-solid fa-images"></i><span>Gallery</span></a>
-          <a href="blog.html" role="listitem"><i class="fa-solid fa-newspaper"></i><span>Blog</span></a>
-          <a href="careers.html" role="listitem"><i class="fa-solid fa-user-gear"></i><span>Careers</span></a>
+      <div class="nav-item has-dropdown">
+        <button class="nav-link page-toggle">
+          <span>Pages</span>
+          <i class="fa-solid fa-chevron-down"></i>
+        </button>
+        <div class="nav-list">
+          <a href="industries.html"><i class="fa-solid fa-car"></i> Industries</a>
+          <a href="factory.html"><i class="fa-solid fa-industry"></i> Factory</a>
+          <a href="gallery.html"><i class="fa-solid fa-images"></i> Gallery</a>
+          <a href="blog.html"><i class="fa-solid fa-newspaper"></i> Blog</a>
+          <a href="careers.html"><i class="fa-solid fa-user-gear"></i> Careers</a>
         </div>
       </div>
       <a href="contact.html">Contact</a>
     </nav>
     <div class="header-actions">
-      <button class="icon-btn" type="button" aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
+      <a href="404.html" class="icon-btn" aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></a>
       <select class="language" aria-label="Select language">
         <option>EN</option>
         <option>ES</option>
@@ -46,15 +52,16 @@
       <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open menu"><i class="fa-solid fa-bars"></i></button>
     </div>
   </header>
+  <div id="menuOverlay"></div>
   <main>
-    <section class="page-hero" style="--page-image: url('https://images.unsplash.com/photo-1565043666747-69f6646db940?auto=format&fit=crop&w=1800&q=80')"><div><p class="eyebrow">Services</p><h1>End-to-end manufacturing services.</h1><p>From engineering review to export shipping, Stackly manages the production workflow with clear checkpoints.</p></div></section>
+    <section class="page-hero hero-services"><div><p class="eyebrow">Services</p><h1>End-to-end manufacturing services.</h1><p>From engineering review to export shipping, Stackly manages the production workflow with clear checkpoints.</p></div></section>
     <section class="section process"><div class="section-heading"><p class="eyebrow">Process</p><h2>Controlled from concept to shipment.</h2></div><div class="timeline"><div><i class="fa-solid fa-pen-ruler"></i><span>Design</span></div><div><i class="fa-solid fa-cubes"></i><span>Raw Material</span></div><div><i class="fa-solid fa-screwdriver-wrench"></i><span>Machining</span></div><div><i class="fa-solid fa-gears"></i><span>Assembly</span></div><div><i class="fa-solid fa-clipboard-check"></i><span>Quality Check</span></div><div><i class="fa-solid fa-box-open"></i><span>Packaging</span></div><div><i class="fa-solid fa-truck-fast"></i><span>Shipping</span></div></div><div class="conveyor"><span></span><span></span><span></span><span></span></div></section>
     <section class="section"><div class="split"><div><p class="eyebrow">Capabilities</p><h2>Built around measurable production capacity.</h2><p>Our service teams cover CNC machining, laser cutting, welding, fabrication, assembly, testing, and packaging.</p></div><div class="progress-list" id="progressList"></div></div></section>
   </main>
   <footer class="footer">
     <div class="footer-grid">
       <div>
-        <a class="brand" href="index.html"><span class="brand-icon"><i class="fa-solid fa-industry"></i></span><span>Stackly</span></a>
+        <a class="brand" href="index.html"><img src="images/logo.webp" alt="Stackly"></a>
         <p>Precision manufacturing, engineered systems, and certified production for global partners.</p>
       </div>
       <div><h3>Products</h3><a href="products.html">CNC Products</a><a href="products.html">Electrical Panels</a><a href="products.html">Robotics Systems</a></div>
@@ -63,7 +70,7 @@
       <div>
         <h3>Newsletter</h3>
         <form class="newsletter"><input type="email" placeholder="Email address"><button class="icon-btn" type="submit" aria-label="Subscribe"><i class="fa-solid fa-arrow-right"></i></button></form>
-        <div class="socials"><a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a><a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a><a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a></div>
+        <div class="socials"><a href="404.html" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a><a href="404.html" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a><a href="404.html" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a></div>
       </div>
     </div>
     <div class="footer-bottom">&copy; 2026 Stackly Manufacturing Factory. All Rights Reserved.</div>
