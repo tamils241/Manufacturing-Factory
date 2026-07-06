@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Orders | Stackly Manufacturing Factory</title>
+  <meta name="description" content="Customer orders for Stackly Manufacturing Factory.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/dashboard-responsive.css">
+</head>
+<body>
+  <div class="page-loader"><div class="loader-mark"><i class="fa-solid fa-industry"></i></div><span>Stackly Manufacturing</span></div>
+  <div class="dash-layout">
+    <aside class="dash-sidebar" id="dashSidebar">
+      <div class="dash-sidebar-header">
+        <a class="brand" href="index.html"><img src="images/logo.webp" alt="Stackly"></a>
+        <button class="dash-sidebar-close" id="dashSidebarClose"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <nav class="dash-sidebar-nav">
+        <a href="customer-dashboard.html"><i class="fa-solid fa-chart-pie"></i> Dashboard</a>
+        <a href="customer-orders.html" class="active"><i class="fa-solid fa-truck"></i> My Orders</a>
+        <a href="products.html"><i class="fa-solid fa-boxes-stacked"></i> Products</a>
+        <a href="quotes.html"><i class="fa-solid fa-file-invoice"></i> Quotes</a>
+        <a href="profile.html"><i class="fa-solid fa-user"></i> Profile</a>
+        <a href="contact.html"><i class="fa-solid fa-headset"></i> Support</a>
+      </nav>
+      <div class="dash-sidebar-footer">
+        <a href="login.html"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
+      </div>
+    </aside>
+    <div class="dash-main" id="dashMain">
+      <div class="dash-topbar">
+        <button class="dash-toggle" id="dashToggle"><i class="fa-solid fa-bars"></i></button>
+        <span class="dash-topbar-title">My Orders</span>
+        <div class="dash-topbar-right">
+          <div class="dash-user">
+            <span>John</span>
+            <div class="dash-avatar">J</div>
+          </div>
+        </div>
+      </div>
+      <div class="dash-content">
+        <section class="dashboard-section" style="padding-top:0">
+          <div class="dashboard-header">
+            <div>
+              <p class="eyebrow">Customer Portal</p>
+              <h2 style="font-size:2rem">My Orders</h2>
+            </div>
+            <p style="color:var(--muted)"><i class="fa-solid fa-calendar"></i> <span id="custDate"></span></p>
+          </div>
+
+          <div class="stats-grid" style="margin-bottom:40px">
+            <div><i class="fa-solid fa-shopping-cart" style="color:var(--primary);font-size:1.5rem;margin-bottom:8px"></i><strong>18</strong><span>Total Orders</span></div>
+            <div><i class="fa-solid fa-cog" style="color:var(--secondary);font-size:1.5rem;margin-bottom:8px"></i><strong>4</strong><span>In Production</span></div>
+            <div><i class="fa-solid fa-truck" style="color:var(--primary);font-size:1.5rem;margin-bottom:8px"></i><strong>3</strong><span>Shipped</span></div>
+            <div><i class="fa-solid fa-check-circle" style="color:var(--success);font-size:1.5rem;margin-bottom:8px"></i><strong>11</strong><span>Delivered</span></div>
+          </div>
+
+          <div class="dashboard-chart" style="margin-bottom:32px">
+            <h3 style="margin-bottom:16px"><i class="fa-solid fa-list"></i> Order History</h3>
+            <div class="dashboard-table-wrap">
+              <table>
+                <thead><tr><th>Order#</th><th>Product</th><th>Quantity</th><th>Status</th><th>Delivery Date</th><th>Amount</th></tr></thead>
+                <tbody>
+                  <tr><td>#CUST-871</td><td>CNC Machining Kit</td><td>2</td><td><span class="status-progress">In Production</span></td><td>Jul 18, 2026</td><td>$8,450</td></tr>
+                  <tr><td>#CUST-872</td><td>Electrical Panel</td><td>1</td><td><span class="status-completed">Shipped</span></td><td>Jul 10, 2026</td><td>$3,200</td></tr>
+                  <tr><td>#CUST-873</td><td>Robotic Arm Assy</td><td>3</td><td><span class="status-pending">Confirmed</span></td><td>Aug 02, 2026</td><td>$15,750</td></tr>
+                  <tr><td>#CUST-874</td><td>Custom Control Panel</td><td>1</td><td><span class="status-progress">In Production</span></td><td>Jul 25, 2026</td><td>$5,600</td></tr>
+                  <tr><td>#CUST-875</td><td>Hydraulic Press Unit</td><td>1</td><td><span class="status-completed">Shipped</span></td><td>Jul 05, 2026</td><td>$12,300</td></tr>
+                  <tr><td>#CUST-876</td><td>Conveyor Belt System</td><td>2</td><td><span class="status-pending">Confirmed</span></td><td>Aug 14, 2026</td><td>$9,800</td></tr>
+                  <tr><td>#CUST-877</td><td>Industrial Sensor Kit</td><td>5</td><td><span class="status-completed">Shipped</span></td><td>Jul 08, 2026</td><td>$4,250</td></tr>
+                  <tr><td>#CUST-878</td><td>Steel Beam Fabrication</td><td>10</td><td><span class="status-progress">In Production</span></td><td>Aug 20, 2026</td><td>$22,000</td></tr>
+                  <tr><td>#CUST-879</td><td>Packaging Machine</td><td>1</td><td><span class="status-completed">Delivered</span></td><td>Jun 28, 2026</td><td>$18,500</td></tr>
+                  <tr><td>#CUST-880</td><td>Cooling Tower Fan</td><td>2</td><td><span class="status-completed">Delivered</span></td><td>Jun 15, 2026</td><td>$7,800</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="dashboard-chart" style="margin-bottom:32px">
+            <h3 style="margin-bottom:16px"><i class="fa-solid fa-map-location-dot" style="color:var(--primary)"></i> Track Shipment</h3>
+            <div class="chart-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:20px">
+              <div style="background:var(--bg);padding:20px;border-radius:var(--radius);border:1px solid var(--line)">
+                <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+                  <strong>#CUST-872 - Electrical Panel</strong>
+                  <span class="status-completed">Shipped</span>
+                </div>
+                <div class="order-timeline" style="margin-top:12px">
+                  <div class="timeline-item done"><div class="tl-title">Picked up</div><div class="tl-meta">Jul 08, 2026 — 09:30 AM</div></div>
+                  <div class="timeline-item done"><div class="tl-title">In transit</div><div class="tl-meta">Jul 09, 2026 — 02:15 PM</div></div>
+                  <div class="timeline-item active"><div class="tl-title">Out for delivery</div><div class="tl-meta">Expected Jul 10, 2026</div></div>
+                  <div class="timeline-item"><div class="tl-title">Delivered</div><div class="tl-meta">Pending</div></div>
+                </div>
+              </div>
+              <div style="background:var(--bg);padding:20px;border-radius:var(--radius);border:1px solid var(--line)">
+                <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+                  <strong>#CUST-875 - Hydraulic Press</strong>
+                  <span class="status-completed">Shipped</span>
+                </div>
+                <div class="order-timeline" style="margin-top:12px">
+                  <div class="timeline-item done"><div class="tl-title">Picked up</div><div class="tl-meta">Jul 03, 2026 — 11:00 AM</div></div>
+                  <div class="timeline-item done"><div class="tl-title">In transit</div><div class="tl-meta">Jul 04, 2026 — 08:45 AM</div></div>
+                  <div class="timeline-item done"><div class="tl-title">Out for delivery</div><div class="tl-meta">Jul 05, 2026 — 07:00 AM</div></div>
+                  <div class="timeline-item active"><div class="tl-title">Delivered</div><div class="tl-meta">Expected Jul 05, 2026</div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="dash-section" style="background:white;padding:32px;border-radius:var(--radius);border:1px solid var(--line)">
+          <div class="section-heading" style="margin-bottom:24px">
+            <p class="eyebrow">Quick Links</p>
+            <h2>Manage your account</h2>
+          </div>
+          <div class="quick-grid">
+            <a href="products.html" class="quick-card">
+              <i class="fa-solid fa-cart-shopping" style="color:var(--primary)"></i>
+              <span>Browse Products</span>
+            </a>
+            <a href="contact.html" class="quick-card">
+              <i class="fa-solid fa-file-circle-question" style="color:var(--secondary)"></i>
+              <span>Request Quote</span>
+            </a>
+            <a href="factory.html" class="quick-card">
+              <i class="fa-solid fa-video" style="color:var(--success)"></i>
+              <span>Factory Tour</span>
+            </a>
+            <a href="contact.html" class="quick-card">
+              <i class="fa-solid fa-headset" style="color:#e91e63"></i>
+              <span>Support</span>
+            </a>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+  <div class="dash-overlay" id="dashOverlay"></div>
+  <button class="back-top icon-btn" id="backTop" type="button" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+  <script>document.getElementById('custDate').textContent=new Date().toLocaleDateString('en-US',{weekday:'long',year:'numeric',month:'long',day:'numeric'});document.querySelector('.page-loader')?.remove();</script>
+  <script>
+    var sidebar = document.getElementById('dashSidebar');
+    var overlay = document.getElementById('dashOverlay');
+    var toggle = document.getElementById('dashToggle');
+    var closeBtn = document.getElementById('dashSidebarClose');
+    function openSidebar(){sidebar.classList.add('open');overlay.classList.add('show')}
+    function closeSidebar(){sidebar.classList.remove('open');overlay.classList.remove('show')}
+    toggle.addEventListener('click',function(e){e.stopPropagation();if(sidebar.classList.contains('open')){closeSidebar()}else{openSidebar()}});
+    closeBtn.addEventListener('click',closeSidebar);
+    overlay.addEventListener('click',closeSidebar);
+    document.addEventListener('keydown',function(e){if(e.key==='Escape')closeSidebar()});
+  </script>
+  <script src="js/main.js"></script>
+  <script src="js/animations.js"></script>
+</body>
+</html>

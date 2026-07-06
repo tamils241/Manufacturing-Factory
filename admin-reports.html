@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reports | Admin | Stackly Manufacturing Factory</title>
+  <meta name="description" content="Admin reports for Stackly Manufacturing Factory.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/dashboard-responsive.css">
+</head>
+<body>
+  <div class="page-loader"><div class="loader-mark"><i class="fa-solid fa-industry"></i></div><span>Stackly Manufacturing</span></div>
+  <div class="dash-layout">
+    <aside class="dash-sidebar" id="dashSidebar">
+      <div class="dash-sidebar-header">
+        <a class="brand" href="index.html"><img src="images/logo.webp" alt="Stackly"></a>
+        <button class="dash-sidebar-close" id="dashSidebarClose"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <nav class="dash-sidebar-nav">
+        <a href="admin-dashboard.html"><i class="fa-solid fa-chart-pie"></i> Dashboard</a>
+        <a href="admin-orders.html"><i class="fa-solid fa-truck"></i> Orders</a>
+        <a href="admin-products.html"><i class="fa-solid fa-boxes-stacked"></i> Products</a>
+        <a href="admin-machines.html"><i class="fa-solid fa-industry"></i> Machines</a>
+        <a href="admin-employees.html"><i class="fa-solid fa-users"></i> Employees</a>
+        <a href="admin-reports.html" class="active"><i class="fa-solid fa-chart-line"></i> Reports</a>
+        <a href="admin-gallery.html"><i class="fa-solid fa-images"></i> Gallery</a>
+        <a href="admin-settings.html"><i class="fa-solid fa-gear"></i> Settings</a>
+      </nav>
+      <div class="dash-sidebar-footer">
+        <a href="login.html"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
+      </div>
+    </aside>
+    <div class="dash-main" id="dashMain">
+      <div class="dash-topbar">
+        <button class="dash-toggle" id="dashToggle"><i class="fa-solid fa-bars"></i></button>
+        <span class="dash-topbar-title">Reports</span>
+        <div class="dash-topbar-right">
+          <div class="dash-user">
+            <span>Admin</span>
+            <div class="dash-avatar">A</div>
+          </div>
+        </div>
+      </div>
+      <div class="dash-content">
+        <section class="dashboard-section" style="padding-top:0">
+          <div class="dashboard-header">
+            <div>
+              <p class="eyebrow">Admin Panel</p>
+              <h2 style="font-size:2rem">Reports & Analytics</h2>
+            </div>
+            <p style="color:var(--muted)"><i class="fa-solid fa-calendar"></i> <span id="adminDate"></span></p>
+          </div>
+
+          <div class="stats-grid" style="margin-bottom:40px">
+            <div><i class="fa-solid fa-dollar-sign" style="color:var(--primary);font-size:1.5rem;margin-bottom:8px"></i><strong>$2.4M</strong><span>Monthly Revenue</span></div>
+            <div><i class="fa-solid fa-chart-line" style="color:var(--success);font-size:1.5rem;margin-bottom:8px"></i><strong>+12%</strong><span>QoQ Growth</span></div>
+            <div><i class="fa-solid fa-clipboard-list" style="color:#e91e63;font-size:1.5rem;margin-bottom:8px"></i><strong>486</strong><span>YTD Orders</span></div>
+            <div><i class="fa-solid fa-star" style="color:#f59e0b;font-size:1.5rem;margin-bottom:8px"></i><strong>94%</strong><span>Avg Satisfaction</span></div>
+          </div>
+
+          <h3 style="margin-bottom:16px"><i class="fa-solid fa-file-lines"></i> Report Overview</h3>
+          <div class="dashboard-grid" style="grid-template-columns:1fr 1fr;margin-bottom:40px">
+            <a href="#" class="dashboard-chart" style="display:flex;flex-direction:column;gap:12px;text-decoration:none;color:inherit;padding:24px;border-radius:var(--radius);border:1px solid var(--line);background:white;cursor:pointer;transition:box-shadow 0.2s" onmouseover="this.style.boxShadow='0 4px 20px rgba(0,0,0,0.08)'" onmouseout="this.style.boxShadow='none'">
+              <i class="fa-solid fa-industry" style="color:var(--primary);font-size:2rem"></i>
+              <h4 style="margin:0">Production Report</h4>
+              <p style="color:var(--muted);margin:0;font-size:0.9rem">Output volumes, cycle times, and efficiency metrics across all production lines.</p>
+            </a>
+            <a href="#" class="dashboard-chart" style="display:flex;flex-direction:column;gap:12px;text-decoration:none;color:inherit;padding:24px;border-radius:var(--radius);border:1px solid var(--line);background:white;cursor:pointer;transition:box-shadow 0.2s" onmouseover="this.style.boxShadow='0 4px 20px rgba(0,0,0,0.08)'" onmouseout="this.style.boxShadow='none'">
+              <i class="fa-solid fa-check-circle" style="color:var(--success);font-size:2rem"></i>
+              <h4 style="margin:0">Quality Report</h4>
+              <p style="color:var(--muted);margin:0;font-size:0.9rem">Defect rates, pass percentages, and quality control audit summaries.</p>
+            </a>
+            <a href="#" class="dashboard-chart" style="display:flex;flex-direction:column;gap:12px;text-decoration:none;color:inherit;padding:24px;border-radius:var(--radius);border:1px solid var(--line);background:white;cursor:pointer;transition:box-shadow 0.2s" onmouseover="this.style.boxShadow='0 4px 20px rgba(0,0,0,0.08)'" onmouseout="this.style.boxShadow='none'">
+              <i class="fa-solid fa-coins" style="color:#e91e63;font-size:2rem"></i>
+              <h4 style="margin:0">Financial Report</h4>
+              <p style="color:var(--muted);margin:0;font-size:0.9rem">Revenue breakdown, cost analysis, and profit margin trends.</p>
+            </a>
+            <a href="#" class="dashboard-chart" style="display:flex;flex-direction:column;gap:12px;text-decoration:none;color:inherit;padding:24px;border-radius:var(--radius);border:1px solid var(--line);background:white;cursor:pointer;transition:box-shadow 0.2s" onmouseover="this.style.boxShadow='0 4px 20px rgba(0,0,0,0.08)'" onmouseout="this.style.boxShadow='none'">
+              <i class="fa-solid fa-warehouse" style="color:var(--secondary);font-size:2rem"></i>
+              <h4 style="margin:0">Inventory Report</h4>
+              <p style="color:var(--muted);margin:0;font-size:0.9rem">Stock levels, turnover rates, and material usage summaries.</p>
+            </a>
+          </div>
+
+          <div class="dashboard-chart" style="margin-bottom:40px;padding:24px;border-radius:var(--radius);border:1px solid var(--line);background:white">
+            <h3 style="margin-bottom:16px"><i class="fa-solid fa-download" style="color:var(--primary)"></i> Download Reports</h3>
+            <p style="color:var(--muted);margin-bottom:16px;font-size:0.9rem">Export the current report data in your preferred format.</p>
+            <div style="display:flex;gap:12px;flex-wrap:wrap">
+              <a href="#" style="display:inline-flex;align-items:center;gap:8px;padding:10px 24px;background:var(--primary);color:white;border-radius:var(--radius);text-decoration:none;font-weight:600;font-size:0.9rem"><i class="fa-solid fa-file-csv"></i> Export CSV</a>
+              <a href="#" style="display:inline-flex;align-items:center;gap:8px;padding:10px 24px;background:#e91e63;color:white;border-radius:var(--radius);text-decoration:none;font-weight:600;font-size:0.9rem"><i class="fa-solid fa-file-pdf"></i> Export PDF</a>
+              <a href="#" style="display:inline-flex;align-items:center;gap:8px;padding:10px 24px;background:var(--success);color:white;border-radius:var(--radius);text-decoration:none;font-weight:600;font-size:0.9rem"><i class="fa-solid fa-file-excel"></i> Export Excel</a>
+            </div>
+          </div>
+        </section>
+
+        <section class="dash-section" style="background:white;padding:32px;border-radius:var(--radius);border:1px solid var(--line)">
+          <div class="section-heading" style="margin-bottom:24px">
+            <p class="eyebrow">Management</p>
+            <h2>Quick Actions</h2>
+          </div>
+          <div class="quick-grid">
+            <a href="factory.html" class="quick-card">
+              <i class="fa-solid fa-eye" style="color:var(--primary)"></i>
+              <span>View Factory</span>
+            </a>
+            <a href="products.html" class="quick-card">
+              <i class="fa-solid fa-boxes-stacked" style="color:var(--secondary)"></i>
+              <span>Manage Products</span>
+            </a>
+            <a href="contact.html" class="quick-card">
+              <i class="fa-solid fa-envelope" style="color:var(--success)"></i>
+              <span>View Inquiries</span>
+            </a>
+            <a href="gallery.html" class="quick-card">
+              <i class="fa-solid fa-image" style="color:#e91e63"></i>
+              <span>Gallery</span>
+            </a>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+  <div class="dash-overlay" id="dashOverlay"></div>
+  <button class="back-top icon-btn" id="backTop" type="button" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+  <script>document.getElementById('adminDate').textContent=new Date().toLocaleDateString('en-US',{weekday:'long',year:'numeric',month:'long',day:'numeric'});document.querySelector('.page-loader')?.remove();</script>
+  <script>
+    var sidebar = document.getElementById('dashSidebar');
+    var overlay = document.getElementById('dashOverlay');
+    var toggle = document.getElementById('dashToggle');
+    var closeBtn = document.getElementById('dashSidebarClose');
+    function openSidebar(){sidebar.classList.add('open');overlay.classList.add('show')}
+    function closeSidebar(){sidebar.classList.remove('open');overlay.classList.remove('show')}
+    toggle.addEventListener('click',function(e){e.stopPropagation();if(sidebar.classList.contains('open')){closeSidebar()}else{openSidebar()}});
+    closeBtn.addEventListener('click',closeSidebar);
+    overlay.addEventListener('click',closeSidebar);
+    document.addEventListener('keydown',function(e){if(e.key==='Escape')closeSidebar()});
+  </script>
+  <script src="js/main.js"></script>
+  <script src="js/animations.js"></script>
+</body>
+</html>

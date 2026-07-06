@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quotes | Stackly Manufacturing Factory</title>
+  <meta name="description" content="Quote requests for Stackly Manufacturing Factory.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/dashboard-responsive.css">
+</head>
+<body>
+  <div class="page-loader"><div class="loader-mark"><i class="fa-solid fa-industry"></i></div><span>Stackly Manufacturing</span></div>
+  <div class="dash-layout">
+    <aside class="dash-sidebar" id="dashSidebar">
+      <div class="dash-sidebar-header">
+        <a class="brand" href="index.html"><img src="images/logo.webp" alt="Stackly"></a>
+        <button class="dash-sidebar-close" id="dashSidebarClose"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <nav class="dash-sidebar-nav">
+        <a href="customer-dashboard.html"><i class="fa-solid fa-chart-pie"></i> Dashboard</a>
+        <a href="customer-orders.html"><i class="fa-solid fa-truck"></i> My Orders</a>
+        <a href="products.html"><i class="fa-solid fa-boxes-stacked"></i> Products</a>
+        <a href="quotes.html" class="active"><i class="fa-solid fa-file-invoice"></i> Quotes</a>
+        <a href="profile.html"><i class="fa-solid fa-user"></i> Profile</a>
+        <a href="contact.html"><i class="fa-solid fa-headset"></i> Support</a>
+      </nav>
+      <div class="dash-sidebar-footer">
+        <a href="login.html"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
+      </div>
+    </aside>
+    <div class="dash-main" id="dashMain">
+      <div class="dash-topbar">
+        <button class="dash-toggle" id="dashToggle"><i class="fa-solid fa-bars"></i></button>
+        <span class="dash-topbar-title">Quotes</span>
+        <div class="dash-topbar-right">
+          <div class="dash-user">
+            <span>John</span>
+            <div class="dash-avatar">J</div>
+          </div>
+        </div>
+      </div>
+      <div class="dash-content">
+        <section class="dashboard-section" style="padding-top:0">
+          <div class="dashboard-header">
+            <div>
+              <p class="eyebrow">Customer Portal</p>
+              <h2 style="font-size:2rem">Quote Requests</h2>
+            </div>
+            <p style="color:var(--muted)"><i class="fa-solid fa-calendar"></i> <span id="custDate"></span></p>
+          </div>
+
+          <div class="stats-grid" style="margin-bottom:40px">
+            <div><i class="fa-solid fa-clock" style="color:var(--secondary);font-size:1.5rem;margin-bottom:8px"></i><strong>4</strong><span>Pending Quotes</span></div>
+            <div><i class="fa-solid fa-check-circle" style="color:var(--success);font-size:1.5rem;margin-bottom:8px"></i><strong>8</strong><span>Approved</span></div>
+            <div><i class="fa-solid fa-magnifying-glass-chart" style="color:var(--primary);font-size:1.5rem;margin-bottom:8px"></i><strong>2</strong><span>In Review</span></div>
+            <div><i class="fa-solid fa-file-invoice" style="color:#e91e63;font-size:1.5rem;margin-bottom:8px"></i><strong>18</strong><span>Total This Year</span></div>
+          </div>
+
+          <div class="dashboard-chart" style="margin-bottom:32px">
+            <h3 style="margin-bottom:16px"><i class="fa-solid fa-file-invoice"></i> Recent Quote Requests</h3>
+            <div class="dashboard-table-wrap">
+              <table>
+                <thead><tr><th>Quote #</th><th>Product</th><th>Amount</th><th>Status</th><th>Date</th><th>Actions</th></tr></thead>
+                <tbody>
+                  <tr><td>#Q-1042</td><td>Custom CNC Bracket</td><td>$4,250</td><td><span class="status-progress">In Review</span></td><td>Jul 04, 2026</td><td><a href="#" style="color:var(--primary)">View</a></td></tr>
+                  <tr><td>#Q-1041</td><td>Hydraulic Pump Unit</td><td>$12,800</td><td><span class="status-pending">Pending</span></td><td>Jul 01, 2026</td><td><a href="#" style="color:var(--primary)">View</a></td></tr>
+                  <tr><td>#Q-1040</td><td>Steel Frame Assembly</td><td>$8,300</td><td><span class="status-completed">Approved</span></td><td>Jun 28, 2026</td><td><a href="#" style="color:var(--primary)">View</a></td></tr>
+                  <tr><td>#Q-1039</td><td>Electrical Control Panel</td><td>$6,750</td><td><span class="status-completed">Approved</span></td><td>Jun 22, 2026</td><td><a href="#" style="color:var(--primary)">View</a></td></tr>
+                  <tr><td>#Q-1038</td><td>Robotic Arm Attachment</td><td>$22,400</td><td><span class="status-progress">In Review</span></td><td>Jun 18, 2026</td><td><a href="#" style="color:var(--primary)">View</a></td></tr>
+                  <tr><td>#Q-1037</td><td>Conveyor Belt Section</td><td>$3,950</td><td><span class="status-pending">Pending</span></td><td>Jun 15, 2026</td><td><a href="#" style="color:var(--primary)">View</a></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="dashboard-chart" style="margin-bottom:32px;text-align:center;padding:40px 32px">
+            <h3 style="margin-bottom:12px"><i class="fa-solid fa-file-circle-plus" style="color:var(--primary)"></i> Need a New Quote?</h3>
+            <p style="color:var(--muted);margin-bottom:20px;max-width:480px;margin-left:auto;margin-right:auto">Tell us about your requirements and our team will provide a detailed quote within 24–48 hours.</p>
+            <a href="contact.html" class="btn btn-primary" style="display:inline-block;padding:12px 32px;background:var(--primary);color:#fff;border-radius:var(--radius);text-decoration:none;font-weight:600"><i class="fa-solid fa-paper-plane"></i> Request New Quote</a>
+          </div>
+        </section>
+
+        <section class="dash-section" style="background:white;padding:32px;border-radius:var(--radius);border:1px solid var(--line)">
+          <div class="section-heading" style="margin-bottom:24px">
+            <p class="eyebrow">Quick Links</p>
+            <h2>Manage your account</h2>
+          </div>
+          <div class="quick-grid">
+            <a href="products.html" class="quick-card">
+              <i class="fa-solid fa-cart-shopping" style="color:var(--primary)"></i>
+              <span>Browse Products</span>
+            </a>
+            <a href="contact.html" class="quick-card">
+              <i class="fa-solid fa-file-circle-question" style="color:var(--secondary)"></i>
+              <span>Request Quote</span>
+            </a>
+            <a href="factory.html" class="quick-card">
+              <i class="fa-solid fa-video" style="color:var(--success)"></i>
+              <span>Factory Tour</span>
+            </a>
+            <a href="contact.html" class="quick-card">
+              <i class="fa-solid fa-headset" style="color:#e91e63"></i>
+              <span>Support</span>
+            </a>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+  <div class="dash-overlay" id="dashOverlay"></div>
+  <button class="back-top icon-btn" id="backTop" type="button" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+  <script>document.getElementById('custDate').textContent=new Date().toLocaleDateString('en-US',{weekday:'long',year:'numeric',month:'long',day:'numeric'});document.querySelector('.page-loader')?.remove();</script>
+  <script>
+    var sidebar = document.getElementById('dashSidebar');
+    var overlay = document.getElementById('dashOverlay');
+    var toggle = document.getElementById('dashToggle');
+    var closeBtn = document.getElementById('dashSidebarClose');
+    function openSidebar(){sidebar.classList.add('open');overlay.classList.add('show')}
+    function closeSidebar(){sidebar.classList.remove('open');overlay.classList.remove('show')}
+    toggle.addEventListener('click',function(e){e.stopPropagation();if(sidebar.classList.contains('open')){closeSidebar()}else{openSidebar()}});
+    closeBtn.addEventListener('click',closeSidebar);
+    overlay.addEventListener('click',closeSidebar);
+    document.addEventListener('keydown',function(e){if(e.key==='Escape')closeSidebar()});
+  </script>
+  <script src="js/main.js"></script>
+  <script src="js/animations.js"></script>
+</body>
+</html>

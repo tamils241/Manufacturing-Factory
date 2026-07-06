@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Machines | Admin | Stackly Manufacturing Factory</title>
+  <meta name="description" content="Machine management for Stackly Manufacturing Factory.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/dashboard-responsive.css">
+</head>
+<body>
+  <div class="page-loader"><div class="loader-mark"><i class="fa-solid fa-industry"></i></div><span>Stackly Manufacturing</span></div>
+  <div class="dash-layout">
+    <aside class="dash-sidebar" id="dashSidebar">
+      <div class="dash-sidebar-header">
+        <a class="brand" href="index.html"><img src="images/logo.webp" alt="Stackly"></a>
+        <button class="dash-sidebar-close" id="dashSidebarClose"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <nav class="dash-sidebar-nav">
+        <a href="admin-dashboard.html"><i class="fa-solid fa-chart-pie"></i> Dashboard</a>
+        <a href="admin-orders.html"><i class="fa-solid fa-truck"></i> Orders</a>
+        <a href="admin-products.html"><i class="fa-solid fa-boxes-stacked"></i> Products</a>
+        <a href="admin-machines.html" class="active"><i class="fa-solid fa-industry"></i> Machines</a>
+        <a href="admin-employees.html"><i class="fa-solid fa-users"></i> Employees</a>
+        <a href="admin-reports.html"><i class="fa-solid fa-chart-line"></i> Reports</a>
+        <a href="admin-gallery.html"><i class="fa-solid fa-images"></i> Gallery</a>
+        <a href="admin-settings.html"><i class="fa-solid fa-gear"></i> Settings</a>
+      </nav>
+      <div class="dash-sidebar-footer">
+        <a href="login.html"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
+      </div>
+    </aside>
+    <div class="dash-main" id="dashMain">
+      <div class="dash-topbar">
+        <button class="dash-toggle" id="dashToggle"><i class="fa-solid fa-bars"></i></button>
+        <span class="dash-topbar-title">Machines</span>
+        <div class="dash-topbar-right">
+          <div class="dash-user">
+            <span>Admin</span>
+            <div class="dash-avatar">A</div>
+          </div>
+        </div>
+      </div>
+      <div class="dash-content">
+        <section class="dashboard-section" style="padding-top:0">
+          <div class="dashboard-header">
+            <div>
+              <p class="eyebrow">Admin Panel</p>
+              <h2 style="font-size:2rem">Factory Machines</h2>
+            </div>
+            <p style="color:var(--muted)"><i class="fa-solid fa-calendar"></i> <span id="adminDate"></span></p>
+          </div>
+
+          <div class="stats-grid" style="margin-bottom:40px">
+            <div><i class="fa-solid fa-industry" style="color:var(--primary);font-size:1.5rem;margin-bottom:8px"></i><strong>156</strong><span>Total Machines</span></div>
+            <div><i class="fa-solid fa-play" style="color:var(--success);font-size:1.5rem;margin-bottom:8px"></i><strong>124</strong><span>Running</span></div>
+            <div><i class="fa-solid fa-wrench" style="color:var(--secondary);font-size:1.5rem;margin-bottom:8px"></i><strong>18</strong><span>Maintenance</span></div>
+            <div><i class="fa-solid fa-pause" style="#e91e63;font-size:1.5rem;margin-bottom:8px"></i><strong>14</strong><span>Idle</span></div>
+          </div>
+
+          <div style="margin-bottom:32px">
+            <h3 style="margin-bottom:16px"><i class="fa-solid fa-cogs"></i> Machine Status Cards</h3>
+            <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px">
+              <div style="background:white;border:1px solid var(--line);border-radius:var(--radius);padding:20px;display:flex;flex-direction:column;gap:8px">
+                <div style="display:flex;align-items:center;justify-content:space-between"><strong style="font-size:1.1rem">CNC-01</strong><span class="status-completed">Running</span></div>
+                <span class="meta">5-Axis CNC Mill</span>
+                <span style="color:var(--muted);font-size:0.875rem"><i class="fa-solid fa-user"></i> John Davis</span>
+                <span style="color:var(--muted);font-size:0.875rem"><i class="fa-solid fa-calendar-check"></i> Jun 28, 2026</span>
+              </div>
+              <div style="background:white;border:1px solid var(--line);border-radius:var(--radius);padding:20px;display:flex;flex-direction:column;gap:8px">
+                <div style="display:flex;align-items:center;justify-content:space-between"><strong style="font-size:1.1rem">CNC-02</strong><span class="status-completed">Running</span></div>
+                <span class="meta">CNC Lathe</span>
+                <span style="color:var(--muted);font-size:0.875rem"><i class="fa-solid fa-user"></i> Sarah Chen</span>
+                <span style="color:var(--muted);font-size:0.875rem"><i class="fa-solid fa-calendar-check"></i> Jul 02, 2026</span>
+              </div>
+              <div style="background:white;border:1px solid var(--line);border-radius:var(--radius);padding:20px;display:flex;flex-direction:column;gap:8px">
+                <div style="display:flex;align-items:center;justify-content:space-between"><strong style="font-size:1.1rem">RBT-01</strong><span class="status-progress">Maintenance</span></div>
+                <span class="meta">Welding Robot</span>
+                <span style="color:var(--muted);font-size:0.875rem"><i class="fa-solid fa-user"></i> Mike Torres</span>
+                <span style="color:var(--muted);font-size:0.875rem"><i class="fa-solid fa-calendar-check"></i> Jul 05, 2026</span>
+              </div>
+              <div style="background:white;border:1px solid var(--line);border-radius:var(--radius);padding:20px;display:flex;flex-direction:column;gap:8px">
+                <div style="display:flex;align-items:center;justify-content:space-between"><strong style="font-size:1.1rem">Laser-01</strong><span class="status-completed">Running</span></div>
+                <span class="meta">Laser Cutting System</span>
+                <span style="color:var(--muted);font-size:0.875rem"><i class="fa-solid fa-user"></i> Emily Park</span>
+                <span style="color:var(--muted);font-size:0.875rem"><i class="fa-solid fa-calendar-check"></i> Jun 30, 2026</span>
+              </div>
+              <div style="background:white;border:1px solid var(--line);border-radius:var(--radius);padding:20px;display:flex;flex-direction:column;gap:8px">
+                <div style="display:flex;align-items:center;justify-content:space-between"><strong style="font-size:1.1rem">ASM-01</strong><span class="status-idle">Idle</span></div>
+                <span class="meta">Assembly Line</span>
+                <span style="color:var(--muted);font-size:0.875rem"><i class="fa-solid fa-user"></i> David Kim</span>
+                <span style="color:var(--muted);font-size:0.875rem"><i class="fa-solid fa-calendar-check"></i> Jul 01, 2026</span>
+              </div>
+              <div style="background:white;border:1px solid var(--line);border-radius:var(--radius);padding:20px;display:flex;flex-direction:column;gap:8px">
+                <div style="display:flex;align-items:center;justify-content:space-between"><strong style="font-size:1.1rem">PRT-01</strong><span class="status-completed">Running</span></div>
+                <span class="meta">3D Printer Array</span>
+                <span style="color:var(--muted);font-size:0.875rem"><i class="fa-solid fa-user"></i> Lisa Brown</span>
+                <span style="color:var(--muted);font-size:0.875rem"><i class="fa-solid fa-calendar-check"></i> Jul 04, 2026</span>
+              </div>
+            </div>
+          </div>
+
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:32px">
+            <div class="dashboard-chart">
+              <h3><i class="fa-solid fa-chart-pie" style="color:var(--primary)"></i> Machine Overview</h3>
+              <div style="display:flex;flex-direction:column;gap:12px;margin-top:16px">
+                <div><div style="display:flex;justify-content:space-between;margin-bottom:4px"><span>Running</span><strong>124 (79.5%)</strong></div><div style="height:8px;background:var(--line);border-radius:4px;overflow:hidden"><div style="height:100%;width:79.5%;background:var(--success);border-radius:4px"></div></div></div>
+                <div><div style="display:flex;justify-content:space-between;margin-bottom:4px"><span>Maintenance</span><strong>18 (11.5%)</strong></div><div style="height:8px;background:var(--line);border-radius:4px;overflow:hidden"><div style="height:100%;width:11.5%;background:var(--secondary);border-radius:4px"></div></div></div>
+                <div><div style="display:flex;justify-content:space-between;margin-bottom:4px"><span>Idle</span><strong>14 (9%)</strong></div><div style="height:8px;background:var(--line);border-radius:4px;overflow:hidden"><div style="height:100%;width:9%;background:#e91e63;border-radius:4px"></div></div></div>
+              </div>
+            </div>
+            <div class="dashboard-chart">
+              <h3><i class="fa-solid fa-gauge-high" style="color:var(--secondary)"></i> Status Breakdown</h3>
+              <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:16px">
+                <div style="flex:1;min-width:100px;background:var(--success);color:white;padding:16px;border-radius:var(--radius);text-align:center"><strong style="font-size:1.5rem">124</strong><br><span style="font-size:0.875rem">Running</span></div>
+                <div style="flex:1;min-width:100px;background:var(--secondary);color:white;padding:16px;border-radius:var(--radius);text-align:center"><strong style="font-size:1.5rem">18</strong><br><span style="font-size:0.875rem">Maintenance</span></div>
+                <div style="flex:1;min-width:100px;background:#e91e63;color:white;padding:16px;border-radius:var(--radius);text-align:center"><strong style="font-size:1.5rem">14</strong><br><span style="font-size:0.875rem">Idle</span></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="dash-section" style="background:white;padding:32px;border-radius:var(--radius);border:1px solid var(--line)">
+          <div class="section-heading" style="margin-bottom:24px">
+            <p class="eyebrow">Management</p>
+            <h2>Quick Actions</h2>
+          </div>
+          <div class="quick-grid">
+            <a href="factory.html" class="quick-card">
+              <i class="fa-solid fa-eye" style="color:var(--primary)"></i>
+              <span>View Factory</span>
+            </a>
+            <a href="products.html" class="quick-card">
+              <i class="fa-solid fa-boxes-stacked" style="color:var(--secondary)"></i>
+              <span>Manage Products</span>
+            </a>
+            <a href="contact.html" class="quick-card">
+              <i class="fa-solid fa-envelope" style="color:var(--success)"></i>
+              <span>View Inquiries</span>
+            </a>
+            <a href="gallery.html" class="quick-card">
+              <i class="fa-solid fa-image" style="color:#e91e63"></i>
+              <span>Gallery</span>
+            </a>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+  <div class="dash-overlay" id="dashOverlay"></div>
+  <button class="back-top icon-btn" id="backTop" type="button" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+  <script>document.getElementById('adminDate').textContent=new Date().toLocaleDateString('en-US',{weekday:'long',year:'numeric',month:'long',day:'numeric'});document.querySelector('.page-loader')?.remove();</script>
+  <script>
+    var sidebar = document.getElementById('dashSidebar');
+    var overlay = document.getElementById('dashOverlay');
+    var toggle = document.getElementById('dashToggle');
+    var closeBtn = document.getElementById('dashSidebarClose');
+    function openSidebar(){sidebar.classList.add('open');overlay.classList.add('show')}
+    function closeSidebar(){sidebar.classList.remove('open');overlay.classList.remove('show')}
+    toggle.addEventListener('click',function(e){e.stopPropagation();if(sidebar.classList.contains('open')){closeSidebar()}else{openSidebar()}});
+    closeBtn.addEventListener('click',closeSidebar);
+    overlay.addEventListener('click',closeSidebar);
+    document.addEventListener('keydown',function(e){if(e.key==='Escape')closeSidebar()});
+  </script>
+  <script src="js/main.js"></script>
+  <script src="js/animations.js"></script>
+</body>
+</html>

@@ -1,0 +1,185 @@
+/* ---- Dashboard Mobile Responsive ----
+   Shared across admin and customer dashboards
+   ============================================ */
+
+@media (max-width: 768px) {
+
+  /* Fix layout — prevent desktop sidebar margin on mobile */
+  .dash-layout {
+    display: block;
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  /* Remove the desktop 250px left margin */
+  .dash-main {
+    margin-left: 0 !important;
+    width: 100% !important;
+    max-width: 100%;
+  }
+
+  .dash-content {
+    width: 100%;
+    padding: 16px;
+    overflow-x: hidden;
+  }
+
+  /* Sidebar — hidden off-screen until opened */
+  .dash-sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 280px;
+    height: 100vh;
+    transform: translateX(-100%);
+    transition: 0.35s;
+    z-index: 9999;
+  }
+
+  .dash-sidebar.open {
+    transform: translateX(0);
+  }
+
+  .dash-sidebar-close {
+    display: block;
+  }
+
+  /* Top Bar */
+  .dash-topbar {
+    height: 70px;
+    padding: 0 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .dash-topbar-title {
+    position: static;
+    transform: none;
+    flex: 1;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 700;
+  }
+
+  .dash-user span {
+    display: none;
+  }
+
+  .dash-avatar {
+    width: 40px;
+    height: 40px;
+  }
+
+  /* Welcome Section */
+  .dashboard-header {
+    display: block;
+    margin-bottom: 20px;
+  }
+
+  .dashboard-header h2 {
+    font-size: 32px !important;
+    line-height: 1.2;
+  }
+
+  .dashboard-header p {
+    margin-top: 8px;
+  }
+
+  /* Statistics Cards */
+  .dashboard-section .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+
+  .dashboard-section .stats-grid > div {
+    padding: 18px;
+    border-radius: 14px;
+  }
+
+  .dashboard-section .stats-grid strong {
+    font-size: 34px;
+  }
+
+  .dashboard-section .stats-grid span {
+    font-size: 15px;
+  }
+
+  /* Tables — horizontal scroll */
+  .dashboard-table-wrap {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .dashboard-table-wrap table {
+    min-width: 700px;
+  }
+
+  /* Charts — single column */
+  .chart-grid {
+    grid-template-columns: 1fr !important;
+    gap: 18px;
+  }
+
+  /* Quick Actions */
+  .quick-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+
+  .quick-card {
+    padding: 18px;
+  }
+
+  .quick-card i {
+    font-size: 26px;
+  }
+
+  .quick-card span {
+    font-size: 14px;
+  }
+
+  /* Cards — reduced padding */
+  .dashboard-chart,
+  .dashboard-info-card,
+  .machine-item {
+    padding: 18px;
+    border-radius: 14px;
+  }
+
+  /* Pipeline — horizontal scroll */
+  .pipeline {
+    overflow-x: auto;
+    white-space: nowrap;
+    padding-bottom: 8px;
+  }
+
+  .pipeline-step {
+    min-width: 90px;
+  }
+
+  /* Spacing */
+  .dashboard-section {
+    margin-bottom: 24px;
+  }
+
+  .dashboard-chart {
+    margin-bottom: 20px;
+  }
+
+  /* Override inline padding on mobile */
+  .dash-section[style*="padding:32px"] {
+    padding: 20px !important;
+  }
+}
+
+/* Prevent horizontal scroll on all viewports */
+html,
+body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}

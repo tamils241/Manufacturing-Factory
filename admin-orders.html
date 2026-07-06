@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Orders | Admin | Stackly Manufacturing Factory</title>
+  <meta name="description" content="Admin orders management for Stackly Manufacturing Factory.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/dashboard-responsive.css">
+</head>
+<body>
+  <div class="page-loader"><div class="loader-mark"><i class="fa-solid fa-industry"></i></div><span>Stackly Manufacturing</span></div>
+  <div class="dash-layout">
+    <aside class="dash-sidebar" id="dashSidebar">
+      <div class="dash-sidebar-header">
+        <a class="brand" href="index.html"><img src="images/logo.webp" alt="Stackly"></a>
+        <button class="dash-sidebar-close" id="dashSidebarClose"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <nav class="dash-sidebar-nav">
+        <a href="admin-dashboard.html"><i class="fa-solid fa-chart-pie"></i> Dashboard</a>
+        <a href="admin-orders.html" class="active"><i class="fa-solid fa-truck"></i> Orders</a>
+        <a href="admin-products.html"><i class="fa-solid fa-boxes-stacked"></i> Products</a>
+        <a href="admin-machines.html"><i class="fa-solid fa-industry"></i> Machines</a>
+        <a href="admin-employees.html"><i class="fa-solid fa-users"></i> Employees</a>
+        <a href="admin-reports.html"><i class="fa-solid fa-chart-line"></i> Reports</a>
+        <a href="admin-gallery.html"><i class="fa-solid fa-images"></i> Gallery</a>
+        <a href="admin-settings.html"><i class="fa-solid fa-gear"></i> Settings</a>
+      </nav>
+      <div class="dash-sidebar-footer">
+        <a href="login.html"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
+      </div>
+    </aside>
+    <div class="dash-main" id="dashMain">
+      <div class="dash-topbar">
+        <button class="dash-toggle" id="dashToggle"><i class="fa-solid fa-bars"></i></button>
+        <span class="dash-topbar-title">Orders Management</span>
+        <div class="dash-topbar-right">
+          <div class="dash-user">
+            <span>Admin</span>
+            <div class="dash-avatar">A</div>
+          </div>
+        </div>
+      </div>
+      <div class="dash-content">
+        <section class="dashboard-section" style="padding-top:0">
+          <div class="dashboard-header">
+            <div>
+              <p class="eyebrow">Admin Panel</p>
+              <h2 style="font-size:2rem">Orders</h2>
+            </div>
+            <p style="color:var(--muted)"><i class="fa-solid fa-calendar"></i> <span id="adminDate"></span></p>
+          </div>
+
+          <div class="stats-grid" style="margin-bottom:40px">
+            <div><i class="fa-solid fa-truck" style="color:var(--primary);font-size:1.5rem;margin-bottom:8px"></i><strong>156</strong><span>Total Orders</span></div>
+            <div><i class="fa-solid fa-clock" style="color:var(--warning);font-size:1.5rem;margin-bottom:8px"></i><strong>23</strong><span>Pending</span></div>
+            <div><i class="fa-solid fa-spinner" style="color:var(--secondary);font-size:1.5rem;margin-bottom:8px"></i><strong>67</strong><span>In Progress</span></div>
+            <div><i class="fa-solid fa-check-circle" style="color:var(--success);font-size:1.5rem;margin-bottom:8px"></i><strong>89</strong><span>Completed</span></div>
+          </div>
+
+          <div class="dashboard-table-wrap" style="margin-bottom:32px">
+            <div style="display:flex;gap:10px;margin-bottom:16px;flex-wrap:wrap">
+              <button class="btn btn-primary" style="padding:8px 20px;border-radius:var(--radius);border:none;cursor:pointer;background:var(--primary);color:white;font-weight:600">All</button>
+              <button class="btn" style="padding:8px 20px;border-radius:var(--radius);border:1px solid var(--line);cursor:pointer;background:white;color:var(--text);font-weight:500">Pending</button>
+              <button class="btn" style="padding:8px 20px;border-radius:var(--radius);border:1px solid var(--line);cursor:pointer;background:white;color:var(--text);font-weight:500">In Progress</button>
+              <button class="btn" style="padding:8px 20px;border-radius:var(--radius);border:1px solid var(--line);cursor:pointer;background:white;color:var(--text);font-weight:500">Completed</button>
+            </div>
+            <table>
+              <thead><tr><th>Order#</th><th>Customer</th><th>Product</th><th>Status</th><th>Amount</th><th>Date</th><th>Action</th></tr></thead>
+              <tbody>
+                <tr><td>#ORD-1042</td><td>Toyota Corp</td><td>Engine Block</td><td><span class="status-completed">Completed</span></td><td>$48,200</td><td>2025-06-28</td><td><a href="#" style="color:var(--primary)"><i class="fa-solid fa-eye"></i></a></td></tr>
+                <tr><td>#ORD-1043</td><td>Boeing Supply</td><td>Titanium Wing</td><td><span class="status-progress">In Progress</span></td><td>$124,500</td><td>2025-06-27</td><td><a href="#" style="color:var(--primary)"><i class="fa-solid fa-eye"></i></a></td></tr>
+                <tr><td>#ORD-1044</td><td>MedTech Devices</td><td>MRI Casing</td><td><span class="status-progress">In Progress</span></td><td>$32,800</td><td>2025-06-26</td><td><a href="#" style="color:var(--primary)"><i class="fa-solid fa-eye"></i></a></td></tr>
+                <tr><td>#ORD-1045</td><td>AutoParts GmbH</td><td>Brake Rotor</td><td><span class="status-pending">Pending</span></td><td>$76,100</td><td>2025-06-25</td><td><a href="#" style="color:var(--primary)"><i class="fa-solid fa-eye"></i></a></td></tr>
+                <tr><td>#ORD-1046</td><td>SpaceTech Ltd</td><td>Satellite Frame</td><td><span class="status-review">Review</span></td><td>$215,000</td><td>2025-06-24</td><td><a href="#" style="color:var(--primary)"><i class="fa-solid fa-eye"></i></a></td></tr>
+                <tr><td>#ORD-1047</td><td>RailWorks INC</td><td>Axle Shaft</td><td><span class="status-pending">Pending</span></td><td>$18,900</td><td>2025-06-23</td><td><a href="#" style="color:var(--primary)"><i class="fa-solid fa-eye"></i></a></td></tr>
+                <tr><td>#ORD-1048</td><td>Naval Dynamics</td><td>Propeller Hub</td><td><span class="status-completed">Completed</span></td><td>$94,300</td><td>2025-06-22</td><td><a href="#" style="color:var(--primary)"><i class="fa-solid fa-eye"></i></a></td></tr>
+                <tr><td>#ORD-1049</td><td>GreenEnergy Co</td><td>Turbine Blade</td><td><span class="status-progress">In Progress</span></td><td>$67,500</td><td>2025-06-21</td><td><a href="#" style="color:var(--primary)"><i class="fa-solid fa-eye"></i></a></td></tr>
+                <tr><td>#ORD-1050</td><td>DefenseTech USA</td><td>Armor Plate</td><td><span class="status-completed">Completed</span></td><td>$192,000</td><td>2025-06-20</td><td><a href="#" style="color:var(--primary)"><i class="fa-solid fa-eye"></i></a></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="dash-section" style="background:white;padding:32px;border-radius:var(--radius);border:1px solid var(--line)">
+          <div class="section-heading" style="margin-bottom:24px">
+            <p class="eyebrow">Management</p>
+            <h2>Quick Actions</h2>
+          </div>
+          <div class="quick-grid">
+            <a href="factory.html" class="quick-card">
+              <i class="fa-solid fa-eye" style="color:var(--primary)"></i>
+              <span>View Factory</span>
+            </a>
+            <a href="products.html" class="quick-card">
+              <i class="fa-solid fa-boxes-stacked" style="color:var(--secondary)"></i>
+              <span>Manage Products</span>
+            </a>
+            <a href="contact.html" class="quick-card">
+              <i class="fa-solid fa-envelope" style="color:var(--success)"></i>
+              <span>View Inquiries</span>
+            </a>
+            <a href="gallery.html" class="quick-card">
+              <i class="fa-solid fa-image" style="color:#e91e63"></i>
+              <span>Gallery</span>
+            </a>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+  <div class="dash-overlay" id="dashOverlay"></div>
+  <button class="back-top icon-btn" id="backTop" type="button" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+  <script>document.getElementById('adminDate').textContent=new Date().toLocaleDateString('en-US',{weekday:'long',year:'numeric',month:'long',day:'numeric'});document.querySelector('.page-loader')?.remove();</script>
+  <script>
+    var sidebar = document.getElementById('dashSidebar');
+    var overlay = document.getElementById('dashOverlay');
+    var toggle = document.getElementById('dashToggle');
+    var closeBtn = document.getElementById('dashSidebarClose');
+    function openSidebar(){sidebar.classList.add('open');overlay.classList.add('show')}
+    function closeSidebar(){sidebar.classList.remove('open');overlay.classList.remove('show')}
+    toggle.addEventListener('click',function(e){e.stopPropagation();if(sidebar.classList.contains('open')){closeSidebar()}else{openSidebar()}});
+    closeBtn.addEventListener('click',closeSidebar);
+    overlay.addEventListener('click',closeSidebar);
+    document.addEventListener('keydown',function(e){if(e.key==='Escape')closeSidebar()});
+  </script>
+  <script src="js/main.js"></script>
+  <script src="js/animations.js"></script>
+</body>
+</html>

@@ -41,9 +41,9 @@ const gallery = [
   ["products", "Products", "images/products.webp"],
   ["warehouse", "Warehouse", "images/warehouse.webp"],
   ["workers", "Workers", "images/workers.webp"],
-  ["factory", "Production", "images/production.webp"],
-  ["machines", "CNC Cell", "images/cnc-cell.webp"],
-  ["warehouse", "Logistics", "images/logistics.webp"]
+  ["factory", "Production", "images/Production.webp"],
+  ["machines", "CNC Cell", "images/CNC-Cell.webp"],
+  ["warehouse", "Logistics", "images/Logistics.webp"]
 ];
 
 const faqs = [

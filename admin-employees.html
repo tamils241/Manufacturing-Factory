@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Employees | Admin | Stackly Manufacturing Factory</title>
+  <meta name="description" content="Employee management for Stackly Manufacturing Factory.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/dashboard-responsive.css">
+</head>
+<body>
+  <div class="page-loader"><div class="loader-mark"><i class="fa-solid fa-industry"></i></div><span>Stackly Manufacturing</span></div>
+  <div class="dash-layout">
+    <aside class="dash-sidebar" id="dashSidebar">
+      <div class="dash-sidebar-header">
+        <a class="brand" href="index.html"><img src="images/logo.webp" alt="Stackly"></a>
+        <button class="dash-sidebar-close" id="dashSidebarClose"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <nav class="dash-sidebar-nav">
+        <a href="admin-dashboard.html"><i class="fa-solid fa-chart-pie"></i> Dashboard</a>
+        <a href="admin-orders.html"><i class="fa-solid fa-truck"></i> Orders</a>
+        <a href="admin-products.html"><i class="fa-solid fa-boxes-stacked"></i> Products</a>
+        <a href="admin-machines.html"><i class="fa-solid fa-industry"></i> Machines</a>
+        <a href="admin-employees.html" class="active"><i class="fa-solid fa-users"></i> Employees</a>
+        <a href="admin-reports.html"><i class="fa-solid fa-chart-line"></i> Reports</a>
+        <a href="admin-gallery.html"><i class="fa-solid fa-images"></i> Gallery</a>
+        <a href="admin-settings.html"><i class="fa-solid fa-gear"></i> Settings</a>
+      </nav>
+      <div class="dash-sidebar-footer">
+        <a href="login.html"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
+      </div>
+    </aside>
+    <div class="dash-main" id="dashMain">
+      <div class="dash-topbar">
+        <button class="dash-toggle" id="dashToggle"><i class="fa-solid fa-bars"></i></button>
+        <span class="dash-topbar-title">Employees</span>
+        <div class="dash-topbar-right">
+          <div class="dash-user">
+            <span>Admin</span>
+            <div class="dash-avatar">A</div>
+          </div>
+        </div>
+      </div>
+      <div class="dash-content">
+        <section class="dashboard-section" style="padding-top:0">
+          <div class="dashboard-header">
+            <div>
+              <p class="eyebrow">Admin Panel</p>
+              <h2 style="font-size:2rem">Team</h2>
+            </div>
+            <p style="color:var(--muted)"><i class="fa-solid fa-calendar"></i> <span id="adminDate"></span></p>
+          </div>
+
+          <div class="stats-grid" style="margin-bottom:40px">
+            <div><i class="fa-solid fa-users" style="color:var(--primary);font-size:1.5rem;margin-bottom:8px"></i><strong>128</strong><span>Total Employees</span></div>
+            <div><i class="fa-solid fa-industry" style="color:var(--secondary);font-size:1.5rem;margin-bottom:8px"></i><strong>72</strong><span>Production</span></div>
+            <div><i class="fa-solid fa-microchip" style="color:var(--success);font-size:1.5rem;margin-bottom:8px"></i><strong>28</strong><span>Engineering</span></div>
+            <div><i class="fa-solid fa-building" style="color:#e91e63;font-size:1.5rem;margin-bottom:8px"></i><strong>18</strong><span>Admin</span></div>
+            <div><i class="fa-solid fa-clipboard-check" style="color:#8b5cf6;font-size:1.5rem;margin-bottom:8px"></i><strong>10</strong><span>QC</span></div>
+          </div>
+
+          <div class="dashboard-grid">
+            <div>
+              <h3 style="margin-bottom:16px"><i class="fa-solid fa-list"></i> Employee Roster</h3>
+              <div class="dashboard-table-wrap">
+                <table>
+                  <thead><tr><th>ID</th><th>Name</th><th>Department</th><th>Role</th><th>Status</th><th>Join Date</th></tr></thead>
+                  <tbody>
+                    <tr><td>EMP-001</td><td>Alex Turner</td><td>Production</td><td>Floor Supervisor</td><td><span class="status-completed">Active</span></td><td>2021-03-15</td></tr>
+                    <tr><td>EMP-002</td><td>Maria Chen</td><td>Engineering</td><td>Senior Mech Eng</td><td><span class="status-completed">Active</span></td><td>2020-07-22</td></tr>
+                    <tr><td>EMP-003</td><td>James Okafor</td><td>QC</td><td>Quality Inspector</td><td><span class="status-completed">Active</span></td><td>2022-01-10</td></tr>
+                    <tr><td>EMP-004</td><td>Priya Sharma</td><td>Admin</td><td>HR Manager</td><td><span class="status-completed">Active</span></td><td>2019-11-01</td></tr>
+                    <tr><td>EMP-005</td><td>Carlos Mendez</td><td>Production</td><td>CNC Operator</td><td><span class="status-progress">On Leave</span></td><td>2023-05-18</td></tr>
+                    <tr><td>EMP-006</td><td>Yuki Tanaka</td><td>Engineering</td><td>Automation Eng</td><td><span class="status-completed">Active</span></td><td>2021-09-03</td></tr>
+                    <tr><td>EMP-007</td><td>Sarah Webb</td><td>Admin</td><td>Finance Officer</td><td><span class="status-completed">Active</span></td><td>2020-04-28</td></tr>
+                    <tr><td>EMP-008</td><td>Daniel Kim</td><td>Production</td><td>Assembly Lead</td><td><span class="status-review">Probation</span></td><td>2024-02-12</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div>
+              <h3 style="margin-bottom:16px"><i class="fa-solid fa-chart-pie"></i> Department Breakdown</h3>
+              <div class="machine-list">
+                <div class="machine-item"><span><strong>Production</strong><br><span class="meta">Floor &amp; assembly workers</span></span><span style="font-weight:600;color:var(--primary)">72</span></div>
+                <div class="machine-item"><span><strong>Engineering</strong><br><span class="meta">Design &amp; automation</span></span><span style="font-weight:600;color:var(--secondary)">28</span></div>
+                <div class="machine-item"><span><strong>Admin</strong><br><span class="meta">HR, finance, management</span></span><span style="font-weight:600;color:#e91e63">18</span></div>
+                <div class="machine-item"><span><strong>QC</strong><br><span class="meta">Quality control &amp; testing</span></span><span style="font-weight:600;color:#8b5cf6">10</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="metric-row" style="margin-top:32px">
+            <div class="metric-tile"><div class="metric-value">96</div><div class="metric-label">Active Employees</div><div class="metric-change up">+4 this quarter</div></div>
+            <div class="metric-tile"><div class="metric-value">4.2</div><div class="metric-label">Avg Years Tenure</div><div class="metric-change up">+0.3</div></div>
+            <div class="metric-tile"><div class="metric-value">6</div><div class="metric-label">On Leave</div><div class="metric-change down">+2</div></div>
+            <div class="metric-tile"><div class="metric-value">92%</div><div class="metric-label">Retention Rate</div><div class="metric-change up">+1.8%</div></div>
+          </div>
+        </section>
+
+        <section class="dash-section" style="background:white;padding:32px;border-radius:var(--radius);border:1px solid var(--line)">
+          <div class="section-heading" style="margin-bottom:24px">
+            <p class="eyebrow">Management</p>
+            <h2>Quick Actions</h2>
+          </div>
+          <div class="quick-grid">
+            <a href="factory.html" class="quick-card">
+              <i class="fa-solid fa-eye" style="color:var(--primary)"></i>
+              <span>View Factory</span>
+            </a>
+            <a href="products.html" class="quick-card">
+              <i class="fa-solid fa-boxes-stacked" style="color:var(--secondary)"></i>
+              <span>Manage Products</span>
+            </a>
+            <a href="contact.html" class="quick-card">
+              <i class="fa-solid fa-envelope" style="color:var(--success)"></i>
+              <span>View Inquiries</span>
+            </a>
+            <a href="gallery.html" class="quick-card">
+              <i class="fa-solid fa-image" style="color:#e91e63"></i>
+              <span>Gallery</span>
+            </a>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+  <div class="dash-overlay" id="dashOverlay"></div>
+  <button class="back-top icon-btn" id="backTop" type="button" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+  <script>document.getElementById('adminDate').textContent=new Date().toLocaleDateString('en-US',{weekday:'long',year:'numeric',month:'long',day:'numeric'});document.querySelector('.page-loader')?.remove();</script>
+  <script>
+    var sidebar = document.getElementById('dashSidebar');
+    var overlay = document.getElementById('dashOverlay');
+    var toggle = document.getElementById('dashToggle');
+    var closeBtn = document.getElementById('dashSidebarClose');
+    function openSidebar(){sidebar.classList.add('open');overlay.classList.add('show')}
+    function closeSidebar(){sidebar.classList.remove('open');overlay.classList.remove('show')}
+    toggle.addEventListener('click',function(e){e.stopPropagation();if(sidebar.classList.contains('open')){closeSidebar()}else{openSidebar()}});
+    closeBtn.addEventListener('click',closeSidebar);
+    overlay.addEventListener('click',closeSidebar);
+    document.addEventListener('keydown',function(e){if(e.key==='Escape')closeSidebar()});
+  </script>
+  <script src="js/main.js"></script>
+  <script src="js/animations.js"></script>
+</body>
+</html>

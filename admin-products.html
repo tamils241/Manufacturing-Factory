@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Products | Admin | Stackly Manufacturing Factory</title>
+  <meta name="description" content="Admin products management for Stackly Manufacturing Factory.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/dashboard-responsive.css">
+</head>
+<body>
+  <div class="page-loader"><div class="loader-mark"><i class="fa-solid fa-industry"></i></div><span>Stackly Manufacturing</span></div>
+  <div class="dash-layout">
+    <aside class="dash-sidebar" id="dashSidebar">
+      <div class="dash-sidebar-header">
+        <a class="brand" href="index.html"><img src="images/logo.webp" alt="Stackly"></a>
+        <button class="dash-sidebar-close" id="dashSidebarClose"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <nav class="dash-sidebar-nav">
+        <a href="admin-dashboard.html"><i class="fa-solid fa-chart-pie"></i> Dashboard</a>
+        <a href="admin-orders.html"><i class="fa-solid fa-truck"></i> Orders</a>
+        <a href="admin-products.html" class="active"><i class="fa-solid fa-boxes-stacked"></i> Products</a>
+        <a href="admin-machines.html"><i class="fa-solid fa-industry"></i> Machines</a>
+        <a href="admin-employees.html"><i class="fa-solid fa-users"></i> Employees</a>
+        <a href="admin-reports.html"><i class="fa-solid fa-chart-line"></i> Reports</a>
+        <a href="admin-gallery.html"><i class="fa-solid fa-images"></i> Gallery</a>
+        <a href="admin-settings.html"><i class="fa-solid fa-gear"></i> Settings</a>
+      </nav>
+      <div class="dash-sidebar-footer">
+        <a href="login.html"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
+      </div>
+    </aside>
+    <div class="dash-main" id="dashMain">
+      <div class="dash-topbar">
+        <button class="dash-toggle" id="dashToggle"><i class="fa-solid fa-bars"></i></button>
+        <span class="dash-topbar-title">Products Management</span>
+        <div class="dash-topbar-right">
+          <div class="dash-user">
+            <span>Admin</span>
+            <div class="dash-avatar">A</div>
+          </div>
+        </div>
+      </div>
+      <div class="dash-content">
+        <section class="dashboard-section" style="padding-top:0">
+          <div class="dashboard-header">
+            <div>
+              <p class="eyebrow">Admin Panel</p>
+              <h2 style="font-size:2rem">Product Catalog</h2>
+            </div>
+            <p style="color:var(--muted)"><i class="fa-solid fa-calendar"></i> <span id="adminDate"></span></p>
+          </div>
+
+          <div class="stats-grid" style="margin-bottom:40px">
+            <div><i class="fa-solid fa-cubes" style="color:var(--primary);font-size:1.5rem;margin-bottom:8px"></i><strong>48</strong><span>Total Products</span></div>
+            <div><i class="fa-solid fa-check-circle" style="color:var(--success);font-size:1.5rem;margin-bottom:8px"></i><strong>42</strong><span>Active</span></div>
+            <div><i class="fa-solid fa-ban" style="color:#e91e63;font-size:1.5rem;margin-bottom:8px"></i><strong>6</strong><span>Discontinued</span></div>
+            <div><i class="fa-solid fa-tags" style="color:var(--secondary);font-size:1.5rem;margin-bottom:8px"></i><strong>8</strong><span>Categories</span></div>
+          </div>
+
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;flex-wrap:wrap;gap:12px">
+            <h3 style="margin:0"><i class="fa-solid fa-boxes-stacked"></i> All Products</h3>
+            <button class="btn-primary" style="padding:10px 24px;border-radius:var(--radius);background:var(--primary);color:#fff;border:none;font-weight:600;cursor:pointer;display:inline-flex;align-items:center;gap:8px"><i class="fa-solid fa-plus"></i> Add Product</button>
+          </div>
+
+          <div class="dashboard-table-wrap" style="margin-bottom:40px">
+            <table>
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Product Name</th>
+                  <th>Category</th>
+                  <th>Price</th>
+                  <th>Stock</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>#PRD-001</td><td>Aluminum Bracket A-200</td><td>Metal Parts</td><td>$12.50</td><td>1,240</td><td><span class="status-completed">Active</span></td></tr>
+                <tr><td>#PRD-002</td><td>Steel Gear SG-45</td><td>Gears</td><td>$34.00</td><td>680</td><td><span class="status-completed">Active</span></td></tr>
+                <tr><td>#PRD-003</td><td>Hydraulic Valve HV-12</td><td>Valves</td><td>$89.75</td><td>320</td><td><span class="status-completed">Active</span></td></tr>
+                <tr><td>#PRD-004</td><td>Rubber Seal RS-08</td><td>Seals</td><td>$4.25</td><td>4,500</td><td><span class="status-completed">Active</span></td></tr>
+                <tr><td>#PRD-005</td><td>Conveyor Belt CB-300</td><td>Belts</td><td>$215.00</td><td>85</td><td><span class="status-progress">Low Stock</span></td></tr>
+                <tr><td>#PRD-006</td><td>Titanium Nut TN-05</td><td>Fasteners</td><td>$2.80</td><td>8,200</td><td><span class="status-completed">Active</span></td></tr>
+                <tr><td>#PRD-007</td><td>Brass Fitting BF-22</td><td>Fittings</td><td>$7.95</td><td>1,100</td><td><span class="status-pending">Discontinued</span></td></tr>
+                <tr><td>#PRD-008</td><td>Pressure Gauge PG-100</td><td>Instruments</td><td>$55.50</td><td>210</td><td><span class="status-completed">Active</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="dash-section" style="background:white;padding:32px;border-radius:var(--radius);border:1px solid var(--line)">
+          <div class="section-heading" style="margin-bottom:24px">
+            <p class="eyebrow">Management</p>
+            <h2>Quick Actions</h2>
+          </div>
+          <div class="quick-grid">
+            <a href="factory.html" class="quick-card">
+              <i class="fa-solid fa-eye" style="color:var(--primary)"></i>
+              <span>View Factory</span>
+            </a>
+            <a href="products.html" class="quick-card">
+              <i class="fa-solid fa-boxes-stacked" style="color:var(--secondary)"></i>
+              <span>Manage Products</span>
+            </a>
+            <a href="contact.html" class="quick-card">
+              <i class="fa-solid fa-envelope" style="color:var(--success)"></i>
+              <span>View Inquiries</span>
+            </a>
+            <a href="gallery.html" class="quick-card">
+              <i class="fa-solid fa-image" style="color:#e91e63"></i>
+              <span>Gallery</span>
+            </a>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+  <div class="dash-overlay" id="dashOverlay"></div>
+  <button class="back-top icon-btn" id="backTop" type="button" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+  <script>document.getElementById('adminDate').textContent=new Date().toLocaleDateString('en-US',{weekday:'long',year:'numeric',month:'long',day:'numeric'});document.querySelector('.page-loader')?.remove();</script>
+  <script>
+    var sidebar = document.getElementById('dashSidebar');
+    var overlay = document.getElementById('dashOverlay');
+    var toggle = document.getElementById('dashToggle');
+    var closeBtn = document.getElementById('dashSidebarClose');
+    function openSidebar(){sidebar.classList.add('open');overlay.classList.add('show')}
+    function closeSidebar(){sidebar.classList.remove('open');overlay.classList.remove('show')}
+    toggle.addEventListener('click',function(e){e.stopPropagation();if(sidebar.classList.contains('open')){closeSidebar()}else{openSidebar()}});
+    closeBtn.addEventListener('click',closeSidebar);
+    overlay.addEventListener('click',closeSidebar);
+    document.addEventListener('keydown',function(e){if(e.key==='Escape')closeSidebar()});
+  </script>
+  <script src="js/main.js"></script>
+  <script src="js/animations.js"></script>
+</body>
+</html>

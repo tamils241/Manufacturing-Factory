@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile | Stackly Manufacturing Factory</title>
+  <meta name="description" content="Customer profile for Stackly Manufacturing Factory.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/dashboard-responsive.css">
+</head>
+<body>
+  <div class="page-loader"><div class="loader-mark"><i class="fa-solid fa-industry"></i></div><span>Stackly Manufacturing</span></div>
+  <div class="dash-layout">
+    <aside class="dash-sidebar" id="dashSidebar">
+      <div class="dash-sidebar-header">
+        <a class="brand" href="index.html"><img src="images/logo.webp" alt="Stackly"></a>
+        <button class="dash-sidebar-close" id="dashSidebarClose"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <nav class="dash-sidebar-nav">
+        <a href="customer-dashboard.html"><i class="fa-solid fa-chart-pie"></i> Dashboard</a>
+        <a href="customer-orders.html"><i class="fa-solid fa-truck"></i> My Orders</a>
+        <a href="products.html"><i class="fa-solid fa-boxes-stacked"></i> Products</a>
+        <a href="quotes.html"><i class="fa-solid fa-file-invoice"></i> Quotes</a>
+        <a href="profile.html" class="active"><i class="fa-solid fa-user"></i> Profile</a>
+        <a href="contact.html"><i class="fa-solid fa-headset"></i> Support</a>
+      </nav>
+      <div class="dash-sidebar-footer">
+        <a href="login.html"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
+      </div>
+    </aside>
+    <div class="dash-main" id="dashMain">
+      <div class="dash-topbar">
+        <button class="dash-toggle" id="dashToggle"><i class="fa-solid fa-bars"></i></button>
+        <span class="dash-topbar-title">My Profile</span>
+        <div class="dash-topbar-right">
+          <div class="dash-user">
+            <span>John</span>
+            <div class="dash-avatar">J</div>
+          </div>
+        </div>
+      </div>
+      <div class="dash-content">
+        <section class="dashboard-section" style="padding-top:0">
+          <div class="dashboard-header">
+            <div>
+              <p class="eyebrow">Customer Portal</p>
+              <h2 style="font-size:2rem">Account Profile</h2>
+            </div>
+            <p style="color:var(--muted)"><i class="fa-solid fa-calendar"></i> <span id="custDate"></span></p>
+          </div>
+
+          <div class="dashboard-grid" style="margin-bottom:32px">
+            <div>
+              <h3 style="margin-bottom:16px"><i class="fa-solid fa-building"></i> Company Information</h3>
+              <div class="dashboard-info-card">
+                <div><span class="label">Company</span><br><strong>ABC Manufacturing Ltd</strong></div>
+                <div><span class="label">Contact Email</span><br><strong>john@abcmanufacturing.com</strong></div>
+                <div><span class="label">Phone</span><br><strong>+1 555 0123</strong></div>
+                <div><span class="label">Account Type</span><br><strong style="color:var(--success)">Premium Customer</strong></div>
+                <div><span class="label">Address</span><br><strong>123 Industrial Blvd, Suite 400, Detroit, MI 48201</strong></div>
+                <div><span class="label">Tax ID</span><br><strong>TX-98-7654321</strong></div>
+              </div>
+            </div>
+            <div>
+              <h3 style="margin-bottom:16px"><i class="fa-solid fa-pen-to-square"></i> Edit Profile</h3>
+              <div class="dashboard-info-card" style="display:block">
+                <div style="margin-bottom:14px">
+                  <span class="label">Name</span>
+                  <input type="text" value="John Doe" disabled style="width:100%;margin-top:4px;padding:8px 12px;border:1px solid var(--line);border-radius:var(--radius-sm);background:#f9f9f9;font-family:inherit;font-size:0.9rem">
+                </div>
+                <div style="margin-bottom:14px">
+                  <span class="label">Email</span>
+                  <input type="email" value="john@abcmanufacturing.com" disabled style="width:100%;margin-top:4px;padding:8px 12px;border:1px solid var(--line);border-radius:var(--radius-sm);background:#f9f9f9;font-family:inherit;font-size:0.9rem">
+                </div>
+                <div style="margin-bottom:14px">
+                  <span class="label">Phone</span>
+                  <input type="tel" value="+1 555 0123" disabled style="width:100%;margin-top:4px;padding:8px 12px;border:1px solid var(--line);border-radius:var(--radius-sm);background:#f9f9f9;font-family:inherit;font-size:0.9rem">
+                </div>
+                <div style="margin-bottom:0">
+                  <span class="label">Company</span>
+                  <input type="text" value="ABC Manufacturing Ltd" disabled style="width:100%;margin-top:4px;padding:8px 12px;border:1px solid var(--line);border-radius:var(--radius-sm);background:#f9f9f9;font-family:inherit;font-size:0.9rem">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="dashboard-chart" style="margin-bottom:32px">
+            <h3 style="margin-bottom:16px"><i class="fa-solid fa-lock"></i> Change Password</h3>
+            <p style="color:var(--muted);padding:16px;background:#f9f9f9;border-radius:var(--radius-sm);border:1px solid var(--line)">
+              <i class="fa-solid fa-info-circle"></i> Contact support to reset your password. Please reach out to our team via the <a href="contact.html">Support</a> page for assistance.
+            </p>
+          </div>
+        </section>
+
+        <section class="dash-section" style="background:white;padding:32px;border-radius:var(--radius);border:1px solid var(--line)">
+          <div class="section-heading" style="margin-bottom:24px">
+            <p class="eyebrow">Quick Links</p>
+            <h2>Manage your account</h2>
+          </div>
+          <div class="quick-grid">
+            <a href="products.html" class="quick-card">
+              <i class="fa-solid fa-cart-shopping" style="color:var(--primary)"></i>
+              <span>Browse Products</span>
+            </a>
+            <a href="contact.html" class="quick-card">
+              <i class="fa-solid fa-file-circle-question" style="color:var(--secondary)"></i>
+              <span>Request Quote</span>
+            </a>
+            <a href="factory.html" class="quick-card">
+              <i class="fa-solid fa-video" style="color:var(--success)"></i>
+              <span>Factory Tour</span>
+            </a>
+            <a href="contact.html" class="quick-card">
+              <i class="fa-solid fa-headset" style="color:#e91e63"></i>
+              <span>Support</span>
+            </a>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+  <div class="dash-overlay" id="dashOverlay"></div>
+  <button class="back-top icon-btn" id="backTop" type="button" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+  <script>document.getElementById('custDate').textContent=new Date().toLocaleDateString('en-US',{weekday:'long',year:'numeric',month:'long',day:'numeric'});document.querySelector('.page-loader')?.remove();</script>
+  <script>
+    var sidebar = document.getElementById('dashSidebar');
+    var overlay = document.getElementById('dashOverlay');
+    var toggle = document.getElementById('dashToggle');
+    var closeBtn = document.getElementById('dashSidebarClose');
+    function openSidebar(){sidebar.classList.add('open');overlay.classList.add('show')}
+    function closeSidebar(){sidebar.classList.remove('open');overlay.classList.remove('show')}
+    toggle.addEventListener('click',function(e){e.stopPropagation();if(sidebar.classList.contains('open')){closeSidebar()}else{openSidebar()}});
+    closeBtn.addEventListener('click',closeSidebar);
+    overlay.addEventListener('click',closeSidebar);
+    document.addEventListener('keydown',function(e){if(e.key==='Escape')closeSidebar()});
+  </script>
+  <script src="js/main.js"></script>
+  <script src="js/animations.js"></script>
+</body>
+</html>

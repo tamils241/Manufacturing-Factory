@@ -1,13 +1,13 @@
 document.addEventListener("DOMContentLoaded", () => {
   const machines = [
     ["CNC Machine", "5-axis precision milling, 24/7 cell readiness.", "images/c6.webp"],
-    ["Milling Machine", "High-rigidity milling for complex metal parts.", "images/milling-machine.webp"],
-    ["Lathe Machine", "Precision turning for shafts and round components.", "images/lathe-machine.webp"],
-    ["Laser Cutting", "Fast flat-sheet cutting with clean edge quality.", "images/laser-cutting.webp"],
-    ["Press Machine", "Repeatable forming for structural components.", "images/press-machine.webp"],
+    ["Milling Machine", "High-rigidity milling for complex metal parts.", "images/Milling-Machine.webp"],
+    ["Lathe Machine", "Precision turning for shafts and round components.", "images/Lathe-Machine.webp"],
+    ["Laser Cutting", "Fast flat-sheet cutting with clean edge quality.", "images/Laser-Cutting.webp"],
+    ["Press Machine", "Repeatable forming for structural components.", "images/Press-Machine.webp"],
     ["Welding Robot", "Programmed weld cells with safety enclosure.", "images/bg3.webp"],
-    ["Injection Molding", "Production molding with inspection sampling.", "images/injection-molding.webp"],
-    ["Packaging Machine", "Automated labeling, packing, and pallet flow.", "images/packing-machine.webp"]
+    ["Injection Molding", "Production molding with inspection sampling.", "images/Injection-Molding.webp"],
+    ["Packaging Machine", "Automated labeling, packing, and pallet flow.", "images/Packing-Machine.webp"]
   ];
 
   const machineSlides = document.getElementById("machineSlides");
