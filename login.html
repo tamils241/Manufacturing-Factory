@@ -16,17 +16,18 @@
 <body>
   
   <main>
-    <section class="section contact" style="min-height:100vh;display:flex;align-items:center;justify-content:center">
-      <div style="width:100%;max-width:480px;margin:0 auto">
+    <section class="section contact" style="min-height:100vh;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#e0f4ff,#b0d4f1)">
+     
+        <form class="quote-form auth-form" style="margin:0 auto;gap:20px">
+            <div style="width:100%;max-width:480px;margin:0 auto">
         <div style="text-align:center;margin-bottom:24px">
+          <a href="index.html" style="display:inline-block"><img src="images/logo.webp" alt="Stackly" style="height:40px;display:block;margin:0 auto 16px"></a>
           <p class="eyebrow">Customer Portal</p>
           <h2 style="font-size:2rem">Sign in to Stackly.</h2>
           <p style="color:var(--muted)">Access quote requests, product inquiries, production updates, and supplier communication.</p>
         </div>
-        <form class="quote-form" style="margin:0 auto">
-          <input type="email" placeholder="Email" required>
+          <input type="email" placeholder="Email" required style="margin-bottom:8px">
           <input type="password" placeholder="Password" maxlength="8" required>
-          <p id="roleErrorLogin" style="color:#e53e3e;font-size:0.85rem;font-weight:600;display:none;text-align:center">Please select a role</p>
           <div style="display:flex;gap:12px;padding:8px 0;justify-content:center">
             <label id="roleAdminLogin" style="flex:1;max-width:160px;text-align:center;padding:12px;border:2px solid var(--line);border-radius:var(--radius);cursor:pointer;transition:0.2s;font-weight:600">
               <input type="radio" name="role" value="admin" style="display:none" onchange="document.getElementById('roleAdminLogin').style.borderColor='var(--primary)';document.getElementById('roleCustomerLogin').style.borderColor='var(--line)'"> Admin
@@ -35,18 +36,28 @@
               <input type="radio" name="role" value="customer" style="display:none" onchange="document.getElementById('roleCustomerLogin').style.borderColor='var(--primary)';document.getElementById('roleAdminLogin').style.borderColor='var(--line)'"> Client
             </label>
           </div>
-          <label style="display:flex;align-items:center;gap:8px;cursor:pointer;padding:4px 0">
-            <input type="checkbox" style="width:16px;height:16px;cursor:pointer"> Remember me
-          </label>
-          <button class="btn" type="submit">Sign In</button>
-          <p class="form-status">Demo form only. Connect authentication before launch.</p>
-          <p style="text-align:center;margin-top:8px">Don't have an account? <a href="signup.html" style="color:var(--secondary);font-weight:700">Sign Up</a></p>
-          <p style="text-align:center;margin-top:4px"><a href="index.html" style="color:#64748b;font-size:0.85rem;transition:color 0.2s" onmouseover="this.style.color='#f39c12'" onmouseout="this.style.color='#64748b'"><i class="fa-solid fa-house"></i> Back to Home</a></p>
+          <p id="roleErrorLogin" style="color:#e53e3e;font-size:0.85rem;font-weight:600;display:none;text-align:center;margin:-4px 0 4px">Please select a role</p>
+          <div style="display:flex;align-items:center;justify-content:space-between;padding:4px 0">
+            <label style="display:flex;align-items:center;gap:8px;cursor:pointer">
+              <input type="checkbox" id="remember" name="remember" style="width:16px;height:16px;cursor:pointer"> Remember me
+            </label>
+            <a href="404.html" style="color:var(--secondary);font-size:0.85rem;font-weight:600">Forgot Password?</a>
+          </div>
+          <div style="text-align:center;margin-top:20px"><button class="btn" type="submit" style="width:auto;min-width:200px">Sign In</button></div>
+          <p class="form-status" style="margin-bottom:12px">Demo form only. Connect authentication before launch.</p>
+          <p style="text-align:center;margin:0 0 20px">Don't have an account? <a href="signup.html" style="color:var(--secondary);font-weight:700">Sign Up</a></p>
+          <p style="text-align:center;margin:0"><a href="index.html" style="color:#64748b;font-size:0.85rem;transition:color 0.2s" onmouseover="this.style.color='#f39c12'" onmouseout="this.style.color='#64748b'"><i class="fa-solid fa-house"></i> Back to Home</a></p>
         </form>
       </div>
     </section>
   </main>
   <script>
+    var emailInput = document.querySelector('input[type="email"]');
+    var rememberCheck = document.getElementById('remember');
+    if (localStorage.getItem('rememberedEmail') && localStorage.getItem('rememberMe') === 'true') {
+      emailInput.value = localStorage.getItem('rememberedEmail');
+      rememberCheck.checked = true;
+    }
     document.querySelector('.quote-form').addEventListener('submit', function(e) {
       e.preventDefault();
       var roleSelected = document.querySelector('input[name="role"]:checked');
@@ -54,6 +65,13 @@
       if (!roleSelected) {
         document.getElementById('roleErrorLogin').style.display = 'block';
         return;
+      }
+      if (rememberCheck.checked) {
+        localStorage.setItem('rememberedEmail', emailInput.value);
+        localStorage.setItem('rememberMe', 'true');
+      } else {
+        localStorage.removeItem('rememberedEmail');
+        localStorage.removeItem('rememberMe');
       }
       if (roleSelected.value === 'admin') {
         window.location.href = 'admin-dashboard.html';

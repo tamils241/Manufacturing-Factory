@@ -43,3 +43,29 @@
 .hero-word > span {
   display: inline-block;
 }
+
+@keyframes fadeUp {
+  0% { transform: translateY(30px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+.auth-form {
+  animation: fadeUp 0.6s ease both;
+}
+
+.auth-form > * {
+  animation: fadeUp 0.5s ease both;
+}
+
+.auth-form > *:nth-child(1) { animation-delay: 0.05s; }
+.auth-form > *:nth-child(2) { animation-delay: 0.1s; }
+.auth-form > *:nth-child(3) { animation-delay: 0.15s; }
+.auth-form > *:nth-child(4) { animation-delay: 0.2s; }
+.auth-form > *:nth-child(5) { animation-delay: 0.25s; }
+.auth-form > *:nth-child(6) { animation-delay: 0.3s; }
+.auth-form > *:nth-child(7) { animation-delay: 0.35s; }
+.auth-form > *:nth-child(8) { animation-delay: 0.4s; }
+.auth-form > *:nth-child(9) { animation-delay: 0.45s; }
+.auth-form > *:nth-child(10) { animation-delay: 0.5s; }
+.auth-form > *:nth-child(11) { animation-delay: 0.55s; }
+.auth-form > *:nth-child(12) { animation-delay: 0.6s; }

@@ -42,13 +42,13 @@
       <a href="contact.html">Contact</a>
     </nav>
     <div class="header-actions">
-      <a href="404.html" class="icon-btn" aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></a><select class="language" aria-label="Select language"><option>EN</option><option>ES</option><option>HI</option></select>
+      <a href="404.html" class="icon-btn" aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></a>
       <a href="login.html" class="nav-auth">Sign in</a><a href="signup.html" class="btn btn-small nav-cta">Sign Up</a><button class="menu-toggle" id="menuToggle" type="button" aria-label="Open menu"><i class="fa-solid fa-bars"></i></button>
     </div>
   </header>
   <div id="menuOverlay"></div>
   <main>
-    <section class="page-hero hero-products"><div><p class="eyebrow">Products</p><h1>Industrial products built for repeatable output.</h1><p>Browse core product lines with production-ready documentation, quality checks, and export packaging.</p><div class="page-actions"><a class="btn" href="contact.html">Request Product Quote</a></div></div></section>
+    <section class="page-hero hero-products"><div class="hero-container"><div class="hero-left"><p class="eyebrow">Products</p><h1>Industrial Products Built For Repeatable Output</h1><p>Browse industrial machinery, automation systems, electrical equipment, steel components, precision CNC products and robotics solutions.</p><div class="page-actions"><a class="btn" href="contact.html">Request Quote</a><a class="btn btn-outline" href="404.html">Download Catalog</a></div></div><div class="hero-right"><div class="hero-glass-card"><h3>Factory Performance</h3><div class="hero-item"><i class="fa-solid fa-box"></i><span>250+ Products</span></div><div class="hero-item"><i class="fa-solid fa-globe"></i><span>45+ Countries</span></div><div class="hero-item"><i class="fa-solid fa-certificate"></i><span>ISO 9001 Certified</span></div><div class="hero-item"><i class="fa-solid fa-headset"></i><span>24/7 Support</span></div></div></div></div></section>
     <section class="section products"><div class="section-heading"><p class="eyebrow">Product Range</p><h2>Manufacturing categories.</h2></div><div class="card-grid product-grid" id="productGrid"></div></section>
     <section class="section capabilities">
       <div class="split">
@@ -57,7 +57,10 @@
           <h2>Precision capacity with transparent production metrics.</h2>
           <p>Our plant blends skilled teams with automated lines, calibrated inspection, and flexible logistics cells.</p>
         </div>
-        <div class="progress-list" id="progressList" data-aos="fade-left"></div>
+        <div data-aos="fade-left">
+          <img src="images/factory.webp" alt="Stackly factory floor" style="border-radius:var(--radius);margin-bottom:20px">
+          <div class="progress-list" id="progressList"></div>
+        </div>
       </div>
     </section>
     <section class="section testimonials">
@@ -80,6 +83,7 @@
         <a class="brand" href="index.html"><img src="images/logo.webp" alt="Stackly"></a>
         <p>Precision manufacturing, engineered systems, and certified production for global partners.</p>
       </div>
+      <div><h3>Quick Links</h3><a href="index.html">Home</a><a href="about.html">About</a><a href="contact.html">Contact</a></div>
       <div><h3>Products</h3><a href="products.html">CNC Products</a><a href="products.html">Electrical Panels</a><a href="products.html">Robotics Systems</a></div>
       <div><h3>Services</h3><a href="services.html">Design</a><a href="factory.html">Factory Audit</a><a href="contact.html">Quote Request</a></div>
       <div><h3>Industries</h3><a href="industries.html">Automotive</a><a href="industries.html">Aerospace</a><a href="industries.html">Medical</a></div>
@@ -89,7 +93,10 @@
         <div class="socials"><a href="404.html" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a><a href="404.html" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a><a href="404.html" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a></div>
       </div>
     </div>
-    <div class="footer-bottom">&copy; 2026 Stackly Manufacturing Factory. All Rights Reserved.</div>
+    <div class="footer-bottom">
+      <div><a href="404.html">Privacy Policy</a> &nbsp;|&nbsp; <a href="404.html">Terms &amp; Conditions</a></div>
+      <div>&copy; 2026 Stackly Manufacturing Factory. All Rights Reserved.</div>
+    </div>
   </footer>
   <button class="back-top icon-btn" id="backTop" type="button" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script><script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script><script src="js/main.js"></script><script src="js/animations.js"></script>

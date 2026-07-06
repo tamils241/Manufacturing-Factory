@@ -95,7 +95,6 @@
   }
 
   .header-actions .btn-small,
-  .header-actions .language,
   .header-actions .icon-btn:not(.menu-toggle) {
     display: none;
   }
@@ -126,11 +125,37 @@
   }
 
   .badge-row {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
 @media (max-width: 768px) {
+  .hero-right {
+    width: 100%;
+    justify-content: center;
+    margin-top: 25px;
+  }
+
+  .hero-glass-card {
+    width: 100%;
+    max-width: 320px;
+    padding: 20px;
+  }
+
+  .hero-item {
+    padding: 10px 0;
+  }
+
+  .hero-item span {
+    font-size: 14px;
+  }
+
+  .hero-item i {
+    width: 34px;
+    height: 34px;
+    font-size: 13px;
+  }
+
   body {
     overflow-x: hidden;
   }
@@ -236,9 +261,16 @@
   .pill-grid,
   .stats-grid,
   .card-grid,
-  .timeline,
-  .badge-row {
+  .timeline {
     grid-template-columns: 1fr;
+  }
+
+  .badge-row {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .card-3d img {
@@ -466,6 +498,45 @@
     width: 16px;
   }
 
+  /* Dashboard sidebar mobile */
+  .dash-sidebar {
+    transform: translateX(-250px);
+  }
+
+  .dash-sidebar.open {
+    transform: translateX(0);
+  }
+
+  .dash-sidebar-close {
+    display: block;
+  }
+
+  .dash-main {
+    margin-left: 0 !important;
+  }
+
+  .dash-content {
+    padding: 16px;
+  }
+
+  .dash-topbar {
+    padding: 12px 16px;
+  }
+
+  .dash-topbar-title {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 50%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .dash-section[style*="padding:32px"] {
+    padding: 20px !important;
+  }
+
   .video-band {
     min-height: 440px;
   }
@@ -509,9 +580,50 @@
   }
 }
 
+@media (max-width: 991px) {
+  .hero-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 40px;
+  }
+
+  .hero-left,
+  .hero-right {
+    width: 100%;
+  }
+
+  .hero-right {
+    justify-content: center;
+    margin-top: 30px;
+  }
+
+  .hero-card,
+  .hero-glass-card {
+    width: 100%;
+    max-width: 420px;
+  }
+
+  .hero-item {
+    justify-content: flex-start;
+  }
+
+  .page-actions,
+  .page-hero .hero-left .page-actions {
+    justify-content: center;
+  }
+
+  .page-hero h1 {
+    font-size: 42px;
+  }
+}
+
 @media (min-width: 769px) {
   .mobile-nav-top,
   .mobile-auth {
+    display: none;
+  }
+
+  .dash-toggle {
     display: none;
   }
 }

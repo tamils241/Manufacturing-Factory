@@ -82,11 +82,6 @@
     </nav>
     <div class="header-actions">
        <a href="404.html" class="icon-btn" aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></a>
-      <select class="language" aria-label="Select language">
-        <option>EN</option>
-        <option>ES</option>
-        <option>HI</option>
-      </select>
       <a href="login.html" class="nav-auth">Sign in</a>
       <a href="signup.html" class="btn btn-small nav-cta">Sign Up</a>
       <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open menu"><i class="fa-solid fa-bars"></i></button>
@@ -204,7 +199,19 @@
           <h2>Precision capacity with transparent production metrics.</h2>
           <p>Our plant blends skilled teams with automated lines, calibrated inspection, and flexible logistics cells.</p>
         </div>
-        <div class="progress-list" id="progressList" data-aos="fade-left"></div>
+        <div data-aos="fade-left">
+          <div class="progress-list" id="progressList"></div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:24px">
+            <div style="padding:16px;border:1px solid var(--line);border-radius:var(--radius);background:white;text-align:center">
+              <strong style="display:block;color:var(--primary);font-size:1.6rem;font-weight:900">98%</strong>
+              <span style="color:var(--muted);font-size:0.85rem">On-Time Delivery</span>
+            </div>
+            <div style="padding:16px;border:1px solid var(--line);border-radius:var(--radius);background:white;text-align:center">
+              <strong style="display:block;color:var(--primary);font-size:1.6rem;font-weight:900">99.7%</strong>
+              <span style="color:var(--muted);font-size:0.85rem">Quality Yield</span>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 <!-- Our Machines -->
@@ -225,7 +232,14 @@
         <h2>Audited systems and compliant output.</h2>
       </div>
       <div class="badge-row">
-        <span>ISO 9001</span><span>ISO 14001</span><span>ISO 45001</span><span>CE</span><span>RoHS</span><span>GMP</span>
+        <div><span>ISO 9001</span><small>Quality Management</small></div>
+        <div><span>ISO 14001</span><small>Environmental Management</small></div>
+        <div><span>ISO 45001</span><small>Occupational Health & Safety</small></div>
+        <div><span>CE</span><small>European Conformity</small></div>
+        <div><span>RoHS</span><small>Hazardous Substance Restriction</small></div>
+        <div><span>GMP</span><small>Good Manufacturing Practice</small></div>
+        <div><span>AS9100</span><small>Aerospace Quality Standard</small></div>
+        <div><span>ISO 13485</span><small>Medical Device Quality</small></div>
       </div>
     </section>
 
@@ -252,7 +266,7 @@
         <button data-filter="warehouse">Warehouse</button>
         <button data-filter="workers">Workers</button>
       </div>
-      <div class="masonry" id="galleryGrid"></div>
+      <div class="gallery-grid" id="galleryGrid"></div>
     </section>
     <!-- Factory Tour -->
     <section class="section factory-tour" id="factoryTour">
@@ -323,6 +337,7 @@
         <a class="brand" href="index.html"><img src="images/logo.webp" alt="Stackly"></a>
         <p>Precision manufacturing, engineered systems, and certified production for global partners.</p>
       </div>
+      <div><h3>Quick Links</h3><a href="index.html">Home</a><a href="about.html">About</a><a href="contact.html">Contact</a></div>
       <div><h3>Products</h3><a href="products.html">CNC Products</a><a href="products.html">Electrical Panels</a><a href="products.html">Robotics Systems</a></div>
       <div><h3>Services</h3><a href="services.html">Design</a><a href="factory.html">Factory Audit</a><a href="contact.html">Quote Request</a></div>
       <div><h3>Industries</h3><a href="industries.html">Automotive</a><a href="industries.html">Aerospace</a><a href="industries.html">Medical</a></div>
@@ -332,7 +347,10 @@
         <div class="socials"><a href="404.html" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a><a href="404.html" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a><a href="404.html" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a></div>
       </div>
     </div>
-    <div class="footer-bottom">&copy; 2026 Stackly Manufacturing Factory. All Rights Reserved.</div>
+    <div class="footer-bottom">
+      <div><a href="404.html">Privacy Policy</a> &nbsp;|&nbsp; <a href="404.html">Terms &amp; Conditions</a></div>
+      <div>&copy; 2026 Stackly Manufacturing Factory. All Rights Reserved.</div>
+    </div>
   </footer>
 
   <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Gallery image preview">

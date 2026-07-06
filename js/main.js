@@ -56,7 +56,7 @@ const faqs = [
 ];
 
 function productCard([title, copy, image, features], index = 0) {
-  return `<article class="product-card" style="animation-delay:${index * 0.1}s"><div class="product-card-inner"><img loading="lazy" src="${image}" alt="${title}"><div><h3>${title}</h3><p>${copy}</p><div class="feature-list">${features.map(item => `<span>${item}</span>`).join("")}</div><div class="link-row"><a href="#contact">View Details</a><a href="#contact">Download Brochure</a></div></div></div></article>`;
+  return `<article class="product-card" style="animation-delay:${index * 0.1}s"><div class="product-card-inner"><img loading="lazy" src="${image}" alt="${title}"><div><h3>${title}</h3><p>${copy}</p><div class="feature-list">${features.map(item => `<span>${item}</span>`).join("")}</div><div class="link-row"><a href="products.html">View Details</a><a href="contact.html">Download Brochure</a></div></div></div></article>`;
 }
 
 function slugify(value) {
