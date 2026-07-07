@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
     onComplete: () => document.querySelector(".page-loader")?.remove()
   });
 
-  gsap.from(".hero-content > *:not(h1)", {
+  if (document.querySelector(".hero-content")) gsap.from(".hero-content > *:not(h1)", {
     y: 36,
     opacity: 0,
     duration: 0.8,
@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  gsap.to(".particles", {
+  if (document.querySelector(".particles")) gsap.to(".particles", {
     yPercent: 12,
     scrollTrigger: window.ScrollTrigger ? { trigger: ".hero", scrub: true } : undefined
   });

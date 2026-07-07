@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (document.querySelector(".testimonialSwiper")) new Swiper(".testimonialSwiper", {
     slidesPerView: 1,
     spaceBetween: 18,
-    loop: true,
+    loop: false,
     autoplay: { delay: 3500 },
     pagination: { el: ".testimonialSwiper .swiper-pagination", clickable: true },
     breakpoints: { 800: { slidesPerView: 2 }, 1150: { slidesPerView: 3 } }
