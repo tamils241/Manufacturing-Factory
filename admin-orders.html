@@ -66,11 +66,11 @@
           </div>
 
           <div class="dashboard-table-wrap" style="margin-bottom:32px">
-            <div style="display:flex;gap:10px;margin-bottom:16px;flex-wrap:wrap">
-              <button class="btn btn-primary" style="padding:8px 20px;border-radius:var(--radius);border:none;cursor:pointer;background:var(--primary);color:white;font-weight:600">All</button>
-              <button class="btn" style="padding:8px 20px;border-radius:var(--radius);border:1px solid var(--line);cursor:pointer;background:white;color:var(--text);font-weight:500">Pending</button>
-              <button class="btn" style="padding:8px 20px;border-radius:var(--radius);border:1px solid var(--line);cursor:pointer;background:white;color:var(--text);font-weight:500">In Progress</button>
-              <button class="btn" style="padding:8px 20px;border-radius:var(--radius);border:1px solid var(--line);cursor:pointer;background:white;color:var(--text);font-weight:500">Completed</button>
+            <div id="orderFilters" style="display:flex;gap:10px;margin-bottom:16px;flex-wrap:wrap">
+              <button class="btn btn-primary" data-filter="all" style="padding:8px 20px;border-radius:var(--radius);border:none;cursor:pointer;background:var(--primary);color:white;font-weight:600">All</button>
+              <button class="btn" data-filter="Pending" style="padding:8px 20px;border-radius:var(--radius);border:1px solid var(--line);cursor:pointer;background:white;color:var(--text);font-weight:500">Pending</button>
+              <button class="btn" data-filter="In Progress" style="padding:8px 20px;border-radius:var(--radius);border:1px solid var(--line);cursor:pointer;background:white;color:var(--text);font-weight:500">In Progress</button>
+              <button class="btn" data-filter="Completed" style="padding:8px 20px;border-radius:var(--radius);border:1px solid var(--line);cursor:pointer;background:white;color:var(--text);font-weight:500">Completed</button>
             </div>
             <table>
               <thead><tr><th>Order#</th><th>Customer</th><th>Product</th><th>Status</th><th>Amount</th><th>Date</th><th>Action</th></tr></thead>
@@ -107,7 +107,7 @@
               <i class="fa-solid fa-envelope" style="color:var(--success)"></i>
               <span>View Inquiries</span>
             </a>
-            <a href="gallery.html" class="quick-card">
+            <a href="admin-gallery.html" class="quick-card">
               <i class="fa-solid fa-image" style="color:#e91e63"></i>
               <span>Gallery</span>
             </a>
@@ -119,6 +119,29 @@
   <div class="dash-overlay" id="dashOverlay"></div>
   <button class="back-top icon-btn" id="backTop" type="button" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
   <script>document.getElementById('adminDate').textContent=new Date().toLocaleDateString('en-US',{weekday:'long',year:'numeric',month:'long',day:'numeric'});document.querySelector('.page-loader')?.remove();</script>
+  <script>
+    document.getElementById('orderFilters').addEventListener('click',function(e){
+      var btn=e.target.closest('button');
+      if(!btn)return;
+      var filter=btn.dataset.filter;
+      document.querySelectorAll('#orderFilters button').forEach(function(b){
+        b.className='btn';
+        b.style.background='white';
+        b.style.color='var(--text)';
+        b.style.border='1px solid var(--line)';
+      });
+      btn.className='btn btn-primary';
+      btn.style.background='var(--primary)';
+      btn.style.color='white';
+      btn.style.border='none';
+      document.querySelectorAll('.dashboard-table-wrap tbody tr').forEach(function(row){
+        if(filter==='all'){row.style.display=''}else{
+          var status=row.querySelector('.status-completed,.status-progress,.status-pending,.status-review');
+          row.style.display=status&&status.textContent.trim()===filter?'':'none'
+        }
+      });
+    });
+  </script>
   <script>
     var sidebar = document.getElementById('dashSidebar');
     var overlay = document.getElementById('dashOverlay');

@@ -102,8 +102,8 @@ button, input, select, textarea {
 }
 
 .brand img {
-  width: 100px;
-  height: 40px;
+  width: 130px;
+  height: 52px;
   object-fit: contain;
   color: var(--logo);
 }
@@ -1000,7 +1000,6 @@ h3 {
 
 .product-card {
   overflow: hidden;
-  perspective: 800px;
   opacity: 0;
   transform: translateY(40px) scale(0.95);
   animation: productReveal 0.8s ease forwards;
@@ -1010,16 +1009,10 @@ h3 {
   box-shadow: var(--shadow);
 }
 
-.product-card:hover .product-card-inner {
-  transform: rotateY(6deg) rotateX(4deg) translateY(-8px);
-}
-
 .product-card-inner {
   background: white;
   border-radius: var(--radius);
   overflow: hidden;
-  transition: transform 0.45s ease;
-  transform-style: preserve-3d;
 }
 
 .product-card img {
@@ -1871,6 +1864,16 @@ h3 {
   gap: 24px;
 }
 
+.dashboard-grid > div {
+  display: flex;
+  flex-direction: column;
+}
+
+.dashboard-grid > div > .dashboard-table-wrap,
+.dashboard-grid > div > .machine-list {
+  flex: 1;
+}
+
 .dashboard-table-wrap {
   background: white;
   border: 1px solid var(--line);
@@ -2307,7 +2310,7 @@ h3 {
 }
 
 .dash-sidebar-header .brand img {
-  height: 32px;
+  height: 42px;
 }
 
 .dash-sidebar-close {
@@ -2471,4 +2474,108 @@ h3 {
 
 .dash-section {
   margin-bottom: 40px;
+}
+
+.auth-split {
+  min-height: 100vh;
+}
+
+.auth-brand {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 50%;
+  height: 100vh;
+  background: url('../images/factory.webp') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.auth-brand::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(10,42,82,0.85), rgba(0,102,204,0.7));
+}
+
+.auth-brand-content {
+  position: relative;
+  text-align: center;
+  padding: 40px;
+  max-width: 420px;
+  animation: authFadeIn 1s ease forwards;
+}
+
+.auth-brand-content a {
+  animation: authSlideUp 0.8s ease forwards;
+}
+
+.auth-brand-content h2 {
+  animation: authSlideUp 0.8s ease 0.15s forwards;
+  opacity: 0;
+}
+
+.auth-brand-content p {
+  animation: authSlideUp 0.8s ease 0.3s forwards;
+  opacity: 0;
+}
+
+@keyframes authFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes authSlideUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.auth-brand-content a {
+  display: flex;
+  justify-content: center;
+}
+
+.auth-brand-content img {
+  height: 60px;
+  margin-bottom: 24px;
+}
+
+.auth-panel {
+  margin-left: 50%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f0f4f8;
+  padding: 40px;
+}
+
+.auth-mobile-logo {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .auth-split {
+    flex-direction: column;
+  }
+  .auth-brand {
+    position: relative;
+    width: 100%;
+    height: auto;
+    min-height: 280px;
+  }
+  .auth-panel {
+    margin-left: 0;
+    min-height: auto;
+  }
+  .auth-brand-content {
+    padding: 24px;
+  }
+  .auth-brand-content h2 {
+    font-size: 1.5rem !important;
+  }
+  .auth-mobile-logo {
+    display: block;
+  }
 }

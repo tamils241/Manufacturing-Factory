@@ -17,41 +17,60 @@
 <body>
   
   <main>
-    <section class="section contact" style="min-height:100vh;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#e0f4ff,#b0d4f1)">
-      <form class="quote-form auth-form" style="margin:0 auto;width:100%;max-width:480px;gap:20px">
-        <div style="text-align:center;margin-bottom:24px">
-          <a href="index.html" style="display:inline-block"><img src="images/logo.webp" alt="Stackly" style="height:40px;display:block;margin:0 auto 16px"></a>
-          <p class="eyebrow">New Account</p>
-          <h2 style="font-size:2rem">Create your Stackly portal account.</h2>
-          <p style="color:var(--muted)">Start quote requests, save product interests, and coordinate with Stackly sales engineers.</p>
+    <div class="auth-split">
+      <div class="auth-brand">
+        <div class="auth-brand-content">
+          <a href="index.html"><img src="images/logo.webp" alt="Stackly"></a>
+          <h2 style="font-size:2rem;color:#fff">Create your Stackly portal account.</h2>
+          <p style="color:rgba(255,255,255,0.7)">Start quote requests, save product interests, and coordinate with Stackly sales engineers.</p>
         </div>
-        <input type="text" placeholder="Full Name" pattern="[A-Za-z\s\-']+" title="Letters only" maxlength="16" oninput="this.value=this.value.replace(/[0-9]/g,'')" required>
-        <input type="text" placeholder="Company" required>
-        <input type="email" placeholder="Email" required style="margin-bottom:8px">
-        <input type="password" placeholder="Password" id="password" maxlength="8" oninput="validatePasswords()" required>
-        <input type="password" placeholder="Confirm Password" id="confirmPassword" maxlength="8" oninput="validatePasswords()" required>
-        <p id="passwordError" style="color:#e53e3e;font-size:0.85rem;font-weight:600;display:none">Passwords do not match</p>
-        <p id="roleError" style="color:#e53e3e;font-size:0.85rem;font-weight:600;display:none;text-align:center">Please select a role</p>
-        <div style="display:flex;gap:12px;padding:8px 0;justify-content:center">
-          <label id="roleAdmin" style="flex:1;max-width:160px;text-align:center;padding:12px;border:2px solid var(--line);border-radius:var(--radius);cursor:pointer;transition:0.2s;font-weight:600">
-            <input type="radio" name="role" value="admin" style="display:none" onchange="document.getElementById('roleAdmin').style.borderColor='var(--primary)';document.getElementById('roleCustomer').style.borderColor='var(--line)'"> Admin
-          </label>
-          <label id="roleCustomer" style="flex:1;max-width:160px;text-align:center;padding:12px;border:2px solid var(--line);border-radius:var(--radius);cursor:pointer;transition:0.2s;font-weight:600">
-            <input type="radio" name="role" value="customer" style="display:none" onchange="document.getElementById('roleCustomer').style.borderColor='var(--primary)';document.getElementById('roleAdmin').style.borderColor='var(--line)'"> Client
-          </label>
-        </div>
-        <div style="text-align:center;margin-top:20px"><button class="btn" type="submit" style="width:auto;min-width:200px">Create Account</button></div>
-        <p class="form-status" style="margin-bottom:12px">Demo form only. Connect authentication before launch.</p>
-        <p style="text-align:center;margin:0 0 20px">Already have an account? <a href="login.html" style="color:var(--secondary);font-weight:700">Sign In</a></p>
-        <p style="text-align:center;margin:0"><a href="index.html" style="color:#64748b;font-size:0.85rem;transition:color 0.2s" onmouseover="this.style.color='#f39c12'" onmouseout="this.style.color='#64748b'"><i class="fa-solid fa-house"></i> Back to Home</a></p>
-      </form>
-    </section>
+      </div>
+      <div class="auth-panel">
+        <form class="quote-form auth-form" style="margin:0 auto;width:100%;max-width:480px;gap:20px">
+          <div style="text-align:center;margin-bottom:24px">
+            <a href="index.html" style="display:inline-block"><img src="images/logo.webp" alt="Stackly" style="height:45px;display:block;margin:0 auto 16px" class="auth-mobile-logo"></a>
+            <p class="eyebrow">New Account</p>
+            <h2 style="font-size:2rem">Create your Stackly portal account.</h2>
+            <p style="color:var(--muted)">Start quote requests, save product interests, and coordinate with Stackly sales engineers.</p>
+          </div>
+          <input type="text" placeholder="Full Name" pattern="[A-Za-z\s\-']+" title="Letters only" maxlength="16" oninput="this.value=this.value.replace(/[0-9]/g,'')" required>
+          <input type="text" placeholder="Company" required>
+          <input type="email" placeholder="Email" required style="margin-bottom:8px">
+          <input type="password" placeholder="Password" id="password" maxlength="20" oninput="validatePasswords()" required>
+          <input type="password" placeholder="Confirm Password" id="confirmPassword" maxlength="20" oninput="validatePasswords()" required>
+          <p id="passwordError" style="color:#e53e3e;font-size:0.85rem;font-weight:600;display:none">Passwords do not match</p>
+          <p id="passwordStrengthError" style="color:#e53e3e;font-size:0.85rem;font-weight:600;display:none">Password must be 8+ characters with uppercase, lowercase, and a number</p>
+          <p id="roleError" style="color:#e53e3e;font-size:0.85rem;font-weight:600;display:none;text-align:center">Please select a role</p>
+          <div style="display:flex;gap:12px;padding:8px 0;justify-content:center">
+            <label id="roleAdmin" style="flex:1;max-width:160px;text-align:center;padding:12px;border:2px solid var(--line);border-radius:var(--radius);cursor:pointer;transition:0.2s;font-weight:600">
+              <input type="radio" name="role" value="admin" style="display:none" onchange="document.getElementById('roleAdmin').style.borderColor='var(--primary)';document.getElementById('roleCustomer').style.borderColor='var(--line)'"> Admin
+            </label>
+            <label id="roleCustomer" style="flex:1;max-width:160px;text-align:center;padding:12px;border:2px solid var(--line);border-radius:var(--radius);cursor:pointer;transition:0.2s;font-weight:600">
+              <input type="radio" name="role" value="customer" style="display:none" onchange="document.getElementById('roleCustomer').style.borderColor='var(--primary)';document.getElementById('roleAdmin').style.borderColor='var(--line)'"> Client
+            </label>
+          </div>
+          <div style="text-align:center;margin-top:20px"><button class="btn" type="submit" style="width:auto;min-width:200px">Create Account</button></div>
+          <p class="form-status" style="margin-bottom:12px">Demo form only. Connect authentication before launch.</p>
+          <p style="text-align:center;margin:0 0 20px">Already have an account? <a href="login.html" style="color:var(--secondary);font-weight:700">Sign In</a></p>
+          <p style="text-align:center;margin:0"><a href="index.html" style="color:#64748b;font-size:0.85rem;transition:color 0.2s" onmouseover="this.style.color='#f39c12'" onmouseout="this.style.color='#64748b'"><i class="fa-solid fa-house"></i> Back to Home</a></p>
+        </form>
+      </div>
+    </div>
   </main>
   <script>
+    function isWeak(pwd) {
+      return pwd.length < 8 || !/[A-Z]/.test(pwd) || !/[a-z]/.test(pwd) || !/[0-9]/.test(pwd);
+    }
     function validatePasswords() {
       var pwd = document.getElementById('password').value;
       var confirm = document.getElementById('confirmPassword').value;
       var error = document.getElementById('passwordError');
+      var strengthError = document.getElementById('passwordStrengthError');
+      if (pwd.length > 0 && isWeak(pwd)) {
+        strengthError.style.display = 'block';
+      } else {
+        strengthError.style.display = 'none';
+      }
       if (confirm.length > 0 && pwd !== confirm) {
         error.style.display = 'block';
       } else {
@@ -64,9 +83,14 @@
       var confirm = document.getElementById('confirmPassword').value;
       var roleSelected = document.querySelector('input[name="role"]:checked');
       document.getElementById('passwordError').style.display = 'none';
+      document.getElementById('passwordStrengthError').style.display = 'none';
       document.getElementById('roleError').style.display = 'none';
       if (!roleSelected) {
         document.getElementById('roleError').style.display = 'block';
+        return;
+      }
+      if (isWeak(pwd)) {
+        document.getElementById('passwordStrengthError').style.display = 'block';
         return;
       }
       if (pwd !== confirm) {

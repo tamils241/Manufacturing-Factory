@@ -17,17 +17,24 @@
 <body>
   
   <main>
-    <section class="section contact" style="min-height:100vh;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#e0f4ff,#b0d4f1)">
-     
-        <form class="quote-form auth-form" style="margin:0 auto;width:100%;max-width:480px;gap:20px">
-        <div style="text-align:center;margin-bottom:24px">
-          <a href="index.html" style="display:inline-block"><img src="images/logo.webp" alt="Stackly" style="height:40px;display:block;margin:0 auto 16px"></a>
-          <p class="eyebrow">Customer Portal</p>
-          <h2 style="font-size:2rem">Sign in to Stackly.</h2>
-          <p style="color:var(--muted)">Access quote requests, product inquiries, production updates, and supplier communication.</p>
+    <div class="auth-split">
+      <div class="auth-brand">
+        <div class="auth-brand-content">
+          <a href="index.html"><img src="images/logo.webp" alt="Stackly"></a>
+          <h2 style="font-size:2rem;color:#fff">Sign in to Stackly.</h2>
+          <p style="color:rgba(255,255,255,0.7)">Access quote requests, product inquiries, production updates, and supplier communication.</p>
         </div>
+      </div>
+      <div class="auth-panel">
+        <form class="quote-form auth-form" style="margin:0 auto;width:100%;max-width:480px;gap:20px">
+          <div style="text-align:center;margin-bottom:24px">
+            <a href="index.html" style="display:inline-block"><img src="images/logo.webp" alt="Stackly" style="height:45px;display:block;margin:0 auto 16px" class="auth-mobile-logo"></a>
+            <p class="eyebrow">Customer Portal</p>
+            <h2 style="font-size:2rem">Sign in to Stackly.</h2>
+            <p style="color:var(--muted)">Access quote requests, product inquiries, production updates, and supplier communication.</p>
+          </div>
           <input type="email" placeholder="Email" required style="margin-bottom:8px">
-          <input type="password" placeholder="Password" maxlength="8" required>
+          <input type="password" placeholder="Password" id="loginPassword" maxlength="20" required>
           <div style="display:flex;gap:12px;padding:8px 0;justify-content:center">
             <label id="roleAdminLogin" style="flex:1;max-width:160px;text-align:center;padding:12px;border:2px solid var(--line);border-radius:var(--radius);cursor:pointer;transition:0.2s;font-weight:600">
               <input type="radio" name="role" value="admin" style="display:none" onchange="document.getElementById('roleAdminLogin').style.borderColor='var(--primary)';document.getElementById('roleCustomerLogin').style.borderColor='var(--line)'"> Admin
@@ -48,7 +55,8 @@
           <p style="text-align:center;margin:0 0 20px">Don't have an account? <a href="signup.html" style="color:var(--secondary);font-weight:700">Sign Up</a></p>
           <p style="text-align:center;margin:0"><a href="index.html" style="color:#64748b;font-size:0.85rem;transition:color 0.2s" onmouseover="this.style.color='#f39c12'" onmouseout="this.style.color='#64748b'"><i class="fa-solid fa-house"></i> Back to Home</a></p>
         </form>
-    </section>
+      </div>
+    </div>
   </main>
   <script>
     var emailInput = document.querySelector('input[type="email"]');
@@ -57,9 +65,13 @@
       emailInput.value = localStorage.getItem('rememberedEmail');
       rememberCheck.checked = true;
     }
+    function isWeak(pwd) {
+      return pwd.length < 8 || !/[A-Z]/.test(pwd) || !/[a-z]/.test(pwd) || !/[0-9]/.test(pwd);
+    }
     document.querySelector('.quote-form').addEventListener('submit', function(e) {
       e.preventDefault();
       var roleSelected = document.querySelector('input[name="role"]:checked');
+      var pwd = document.getElementById('loginPassword').value;
       document.getElementById('roleErrorLogin').style.display = 'none';
       if (!roleSelected) {
         document.getElementById('roleErrorLogin').style.display = 'block';
@@ -67,6 +79,10 @@
       }
       if (!rememberCheck.checked) {
         alert('Please check the "Remember Me" box to login.');
+        return;
+      }
+      if (isWeak(pwd)) {
+        alert('Weak password. Password must be 8+ characters with uppercase, lowercase, and a number.');
         return;
       }
       localStorage.setItem('rememberedEmail', emailInput.value);
