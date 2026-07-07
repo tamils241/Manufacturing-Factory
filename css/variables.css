@@ -7,10 +7,12 @@
   --success: #22c55e;
   --ink: #273244;
   --muted: #64748b;
+  --text: #1e293b;
+  --warning: #f59e0b;
   --line: rgba(15, 23, 42, 0.12);
-  --glass: rgba(255, 255, 255, 0.72);
   --shadow: 0 18px 60px rgba(15, 23, 42, 0.14);
   --radius: 8px;
+  --radius-sm: 4px;
   --heading: "Poppins", sans-serif;
   --body: "Inter", sans-serif;
 }
