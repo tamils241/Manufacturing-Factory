@@ -71,8 +71,8 @@
               <a href="404.html" class="btn" style="background:white;color:var(--text);border:1px solid var(--line);padding:10px 20px;border-radius:var(--radius);cursor:pointer;text-decoration:none;display:inline-block"><i class="fa-solid fa-layer-group"></i> Create Album</a>
             </div>
             <div style="display:flex;gap:8px">
-              <button class="btn" style="background:white;color:var(--text);border:1px solid var(--line);padding:10px 16px;border-radius:var(--radius);cursor:pointer"><i class="fa-solid fa-th"></i></button>
-              <button class="btn" style="background:white;color:var(--text);border:1px solid var(--line);padding:10px 16px;border-radius:var(--radius);cursor:pointer"><i class="fa-solid fa-list"></i></button>
+              <button class="btn" style="background:var(--primary);color:white;border:1px solid var(--line);padding:10px 16px;border-radius:var(--radius);cursor:pointer" id="gridViewBtn" onclick="setView('grid')"><i class="fa-solid fa-th"></i></button>
+              <button class="btn" style="background:white;color:var(--text);border:1px solid var(--line);padding:10px 16px;border-radius:var(--radius);cursor:pointer" id="listViewBtn" onclick="setView('list')"><i class="fa-solid fa-list"></i></button>
             </div>
           </div>
 
@@ -140,6 +140,27 @@
                 <div style="display:flex;justify-content:space-between;font-size:0.8rem;opacity:0.9"><span>4.1 MB</span><span><i class="fa-regular fa-star"></i></span></div>
               </div>
             </div>
+            <div style="border-radius:var(--radius);height:200px;position:relative;overflow:hidden;cursor:pointer">
+              <img src="images/Laser-Cutting.webp" alt="Laser Cutting" style="width:100%;height:100%;object-fit:cover">
+              <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.7));padding:12px;color:white">
+                <strong>Laser Cutting</strong>
+                <div style="display:flex;justify-content:space-between;font-size:0.8rem;opacity:0.9"><span>6.2 MB</span><span></span></div>
+              </div>
+            </div>
+            <div style="border-radius:var(--radius);height:200px;position:relative;overflow:hidden;cursor:pointer">
+              <img src="images/Press-Machine.webp" alt="Press Machine" style="width:100%;height:100%;object-fit:cover">
+              <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.7));padding:12px;color:white">
+                <strong>Press Machine</strong>
+                <div style="display:flex;justify-content:space-between;font-size:0.8rem;opacity:0.9"><span>4.8 MB</span><span><i class="fa-regular fa-star"></i></span></div>
+              </div>
+            </div>
+            <div style="border-radius:var(--radius);height:200px;position:relative;overflow:hidden;cursor:pointer">
+              <img src="images/Injection-Molding.webp" alt="Injection Molding" style="width:100%;height:100%;object-fit:cover">
+              <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.7));padding:12px;color:white">
+                <strong>Injection Molding</strong>
+                <div style="display:flex;justify-content:space-between;font-size:0.8rem;opacity:0.9"><span>3.5 MB</span><span></span></div>
+              </div>
+            </div>
           </div>
 
           <div style="text-align:center;margin-bottom:40px;padding:32px;background:var(--bg);border-radius:var(--radius);border:2px dashed var(--line)">
@@ -191,6 +212,21 @@
     closeBtn.addEventListener('click',closeSidebar);
     overlay.addEventListener('click',closeSidebar);
     document.addEventListener('keydown',function(e){if(e.key==='Escape')closeSidebar()});
+    function setView(view){
+      var grid=document.querySelector('.gallery-grid');
+      var gridBtn=document.getElementById('gridViewBtn');
+      var listBtn=document.getElementById('listViewBtn');
+      if(view==='grid'){
+        grid.style.display='grid';
+        gridBtn.style.background='var(--primary)';gridBtn.style.color='white';
+        listBtn.style.background='white';listBtn.style.color='var(--text)';
+      }else{
+        grid.style.display='flex';
+        grid.style.flexDirection='column';
+        listBtn.style.background='var(--primary)';listBtn.style.color='white';
+        gridBtn.style.background='white';gridBtn.style.color='var(--text)';
+      }
+    }
   </script>
   <script src="js/main.js"></script>
   <script src="js/animations.js"></script>
