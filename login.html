@@ -65,13 +65,12 @@
         document.getElementById('roleErrorLogin').style.display = 'block';
         return;
       }
-      if (rememberCheck.checked) {
-        localStorage.setItem('rememberedEmail', emailInput.value);
-        localStorage.setItem('rememberMe', 'true');
-      } else {
-        localStorage.removeItem('rememberedEmail');
-        localStorage.removeItem('rememberMe');
+      if (!rememberCheck.checked) {
+        alert('Please check the "Remember Me" box to login.');
+        return;
       }
+      localStorage.setItem('rememberedEmail', emailInput.value);
+      localStorage.setItem('rememberMe', 'true');
       if (roleSelected.value === 'admin') {
         window.location.href = 'admin-dashboard.html';
       } else {
